@@ -2,11 +2,9 @@
 title: "dplyr"
 author: "Matt Thomas"
 date: "April 20, 2017"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## dplyr
+dplyr
