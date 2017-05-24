@@ -8,6 +8,8 @@ output:
     toc: yes
 ---
 
+Github is a place to store and collaborate on code. We will be using github to host and work on projects this semester. We will go over the general process for using github in the course. This page will host some notes or helpful reminders for using github.
+
 ![https://xkcd.com/1597/](https://imgs.xkcd.com/comics/git.png)
 
   

@@ -3,7 +3,7 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 ## Software
 * [R](https://cran.r-project.org/)
 * [Rstudio](https://www.rstudio.com/)
-* [Github](https://github.com/)
+* [Github](https://github.com/), [notes](./github)
 * R Packages:
   * [dplyr](./dplyr)
   * [ggplot2](./ggplot)
@@ -11,3 +11,6 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 
 ## Datasets
 Datasets will be here
+
+## Additional links
+* [DataCamp](https://www.datacamp.com/)

@@ -1,14 +1,27 @@
 ---
 title: "ggplot"
-author: "Matt Thomas"
-date: "April 20, 2017"
+author: "Math 246"
 output: 
   html_document: 
+    number_sections: yes
     theme: cerulean
+    toc: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# loading the package
+
+ggplot2 is a package fore creating professional-quality graphs. Once the package is installed, load the package using
+
+```{r, eval=FALSE, include=TRUE}
+library(ggplot2)
 ```
 
-## ggplot
+or
+
+```{r, eval=TRUE, message=FALSE, warning=FALSE, include=TRUE}
+require(ggplot2)
+```
+
+# qplot
+
+# ggplot()
