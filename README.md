@@ -10,4 +10,4 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
   * [RMarkdown](./rmarkdown)
 
 ## Datasets
-Datasets will be added here
+Datasets will be here
