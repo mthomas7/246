@@ -4,7 +4,7 @@ author: "Matt Thomas"
 date: "April 20, 2017"
 output: 
   html_document: 
-    keep_md: yes
+    keep_md: no
 ---
 
 dplyr

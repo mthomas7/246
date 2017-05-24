@@ -4,8 +4,8 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 
 ## Software
 * [R](https://cran.r-project.org/)
-* Rstudio
-* Github
+* [Rstudio](https://www.rstudio.com/)
+* [Github](https://github.com/)
 * R Packages:
   * dplyr
   * ggplot2
