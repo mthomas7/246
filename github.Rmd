@@ -1,0 +1,13 @@
+---
+title: "Github"
+author: "Math 246"
+output: 
+  html_document: 
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+---
+
+![https://xkcd.com/1597/](https://imgs.xkcd.com/comics/git.png)
+
+  
