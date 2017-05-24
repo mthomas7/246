@@ -1,10 +1,10 @@
 ---
-title: "dplyr"
-author: "Matt Thomas"
-date: "April 20, 2017"
+title: "dplyr tutorial"
+author: "Math 246"
+date: ""
 output: 
   html_document: 
     keep_md: no
 ---
 
-dplyr
+Here is a short 
