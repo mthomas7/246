@@ -1,0 +1,8 @@
+---
+title: "Syllabus"
+author: "Matt Thomas"
+date: "May 24, 2017"
+output: html_document
+---
+
+
