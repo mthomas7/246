@@ -1,32 +1,28 @@
 ---
 title: "RMarkdown"
-author: "Matt Thomas"
-date: "April 20, 2017"
+author: "Math 246"
 output: 
   html_document: 
-    keep_md: yes
+    keep_md: no
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+RMarkdown is a great way to write up results from statistical analysis, which can be rendered in many different formats (e.g. pdf, website, word doc, or slides).
+
+Create a new Rmd file in RStudio. You will see a sample document created. Read through it to get a sense of how it is structured. This page is itself created from an Rmd file which can be found in the github page for the course.
+
+For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+Some important features for us:
+
+* You can use \LaTeX\ code within a document, e.g. math mode between dollar signs results in $f(x)=3x^2+4$ or double dollar signs: $$\alpha$$
+* Code can be evaluated, e.g. typing "r 1+1" with the quotation marks replaced by backticks is evaluated to give `r 1+1`. This can be particularly useful when redoing analysis.
+* Hlines are created with three or more horizontal lines:
+
+---
+
+* Inline code:
+
+```{r}
+5*3
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

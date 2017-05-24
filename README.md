@@ -7,6 +7,7 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 * R Packages:
   * [dplyr](./dplyr)
   * [ggplot2](./ggplot)
+  * [RMarkdown](./rmarkdown)
 
 ## Datasets
 Datasets will be added here
