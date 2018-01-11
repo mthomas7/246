@@ -1,0 +1,22 @@
+---
+title: "Day 1"
+author: "Math 246"
+date: "January 11, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Welcome to Math 246
+
+## Goals for the course
+
+## Course website
+[website](http://mthomas7.github.io/246)
+
+## Tools
+* R - (note - this isn't a programming class, but it's going to be our primary tool)
+* RStudio
+* Github
