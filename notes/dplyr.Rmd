@@ -1,0 +1,27 @@
+---
+title: "dplyr tutorial"
+author: "Math 246"
+date: ""
+output: 
+  html_document: 
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+---
+
+Here is a short tutorial on dplyr. Because this source is hosted on github, you can download the source Rmd file, and suggest revisions directly.
+
+We first need to load the `dplyr` package. Make sure it is installed (it should be listed in your packages), then check the box next to it. If you are writing a script which will use dplyr, you can incluce
+
+```{r, eval=FALSE, include=TRUE}
+library(dplyr)
+```
+
+or
+
+```{r, eval=TRUE, message=FALSE, warning=FALSE, include=TRUE}
+require(dplyr)
+```
+
+(What is the difference between the two?)
+
