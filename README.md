@@ -1,7 +1,7 @@
 Welcome to the website for Math 246 at IC. All the information, data sets, and assignments will be posted here. See the syllabus for details about the course itself.
 
 ## Logistics
-* [Syllabus](./logistics/syllabus.Rmd)
+* [Syllabus](./logistics/syllabus.md)
 * [Calendar](./logistics/calendar.md)
 
 ## Software
