@@ -1,0 +1,1 @@
+Math 246 Syllabus
