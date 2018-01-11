@@ -12,6 +12,7 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
   * [dplyr](./dplyr)
   * [ggplot2](./ggplot)
   * [RMarkdown](./rmarkdown)
+* [FAQ](./faq.md)
 
 ## Datasets
 Datasets will be here
