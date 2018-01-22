@@ -21,6 +21,9 @@
 
 * Hardware: You will need your own computer or use one of the computer labs. The software is already installed on many of the computers in Williams.
 
+## Note
+This course has been approved by IC’s Committee for College-Wide Requirements for meeting the qualifications of the Integrative Core Curriculum.  Contingent upon successful completion of all course requirements and the uploading of required learning outcome artifacts onto Taskstream, this class meets and satisfies the ICC Quantitative Literacy designation.
+
 ## Learning outcomes
 Upon completing the course, you should be able to:
 * Use R to produce descriptive statistics about a sample
