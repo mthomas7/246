@@ -1,7 +1,5 @@
 # Math 246-01 Syllabus
 
-[[TOC]]
-
 ## Course Information
 * Meeting times and places:
 * TR 10:50-12:05, Williams 320
@@ -24,10 +22,10 @@
 
 ## Grades
 Your final score will be broken down as follows:
-* 20\%: Homework/Quizzes
-* 40\%: Midterm Exam (2, 20% each)
-* 30%: Final Exam
-* Labs
+* 25%: Homework/Quizzes
+* 30%: Midterm Exams (2, 15% each)
+* 25%: Final Exam
+* 20%: Labs/Projects
 
 Final grades will be determined by the final percentage.
 
@@ -66,8 +64,7 @@ You may not have given much thought to how to read a math book, but you probably
 It's easy to think that the point of doing a math problem is to get to the answer, and the work is just necessary to get to the answer. There are many interesting ideas in a course like this where the answers are the least interesting part of the thinking you will do. If the story of Cinderella only had one line in it, ``and they lived happily ever after,'' you probably wouldn't find it a very interesting story, even though it has the same ending. Think of each math problem as its own story - the content of the story is every bit as important as the ending.
 If you want people, including your future self, to understand your story (i.e. solution), you should also make sure you are using proper grammar and spelling. This will make your work much easier to understand.
 
-Office hours
-
+#### Office hours
 Office hours are most useful when you've already thought about the problem(s) you have questions about. I'll ask you ``what have you tried so far?'', and I want to be able to see where you got stuck solving the problem. If you haven't started the problem, you will probably find that you'll get more out of office hours by thinking about the problem first.
 
 ## Additional policies
