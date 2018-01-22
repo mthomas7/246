@@ -8,9 +8,10 @@
   * Office hours: M 1-2, T 2:30-3:30, W 12-1 (Or by appointment)
   * Additionally, I will be available in the Math tutorial room (Williams 318) on Mondays from 12:00-1:00.
   * Instructor e-mail: mthomas7@ithaca.edu
-* Website: https://mthomas7.github.io/246/
+* Website: [https://mthomas7.github.io/246/](https://mthomas7.github.io/246/)
 
 * Textbook: STAT2: Building Models for a World of Data, by Cannon et al.
+  * Textbook website: http://www.macmillanhighered.com/launchpad/stat2/7610242
 * Calendar: The course calendar can be found on the website. This calendar will be updated as we continue through the semester.
 
 * Software: For course materials, we will use the following resources:
@@ -19,6 +20,14 @@
   * [Github](https://github.com/)
 
 * Hardware: You will need your own computer or use one of the computer labs. The software is already installed on many of the computers in Williams.
+
+## Learning outcomes
+Upon completing the course, you should be able to:
+* Use R to produce descriptive statistics about a sample
+* Choose an appropriate statistical test for a given research question and associated data set
+* Use R to conduct inferential statistical tests
+* Interpret the output from a hypothesis test and confidence interval to produce qualified conclusions about a population
+* Produce a comprehensive report that demonstrates mastery of the student learning outcomes listed above
 
 ## Grades
 Your final score will be broken down as follows:

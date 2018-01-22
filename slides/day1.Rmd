@@ -22,3 +22,37 @@ knitr::opts_chunk$set(echo = FALSE)
 > - R - (note - this isn't a programming class, but it's going to be our primary tool)
 > - RStudio
 > - Github
+
+## Thoughts on software
+
+Why not use excel? (Why not use X?)
+
+## Statistics and Data Science
+What is the difference?
+
+(Google it)
+
+## Start to review {.columns-2}
+
+Some terms
+
+* observational unit
+* variable
+* quantitative variable
+* categorical/factor variable
+* population
+* parameter
+* sample
+* statistic
+* experiment
+
+More terms
+
+* observational study
+* hypothesis test
+* p-value
+* confidence interval
+* normal model
+
+
+## 
