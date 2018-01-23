@@ -2,6 +2,8 @@
 
 Welcome to the website for Math 246 at IC. All the information, data sets, and assignments will be posted here. See the syllabus for details about the course itself.
 
+[[TOC]]
+
 ## Logistics
 * [Syllabus](./logistics/syllabus.md)
 * [Calendar](./logistics/calendar.md)
@@ -18,6 +20,9 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 
 ## Datasets
 * [cdc](./data/cdc.csv), <https://www.cdc.gov/brfss/>
+
+## Articles
+* [What I was Wrong About, NYT](https://www.nytimes.com/2017/12/24/opinion/2017-wrong-numbers.html)
 
 ## Additional links
 * [DataCamp](https://www.datacamp.com/)
