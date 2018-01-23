@@ -27,3 +27,4 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 ## Additional links
 * [DataCamp](https://www.datacamp.com/)
 * [R Links](https://mthomas7.github.io/links/)
+* [Intro Stats book](https://www.openintro.org/stat/textbook.php?stat_book=os)
