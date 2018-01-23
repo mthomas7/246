@@ -34,10 +34,12 @@ Upon completing the course, you should be able to:
 
 ## Grades
 Your final score will be broken down as follows:
-* 25%: Homework/Quizzes
-* 30%: Midterm Exams (2, 15% each)
+* 20%: Homework
+* 10% Quizzes
+* 30% Reports
+* 10%: Midterm Exam
 * 25%: Final Exam
-* 20%: Labs/Projects
+* 5%: Participation
 
 Final grades will be determined by the final percentage.
 
@@ -50,13 +52,19 @@ Final grades will be determined by the final percentage.
 |   B-  |       80       |   D-  |       60       |
 |   C+  |       77       |   F   |       <60      |
 
+### Homework
+Homework will be assigned roughly weekly, and will be graded based on correctness.
+
+### Reports
+Reports will be more involved than homework sets, requiring you to analyze a data set and describe your analysis and results.
+
 ## Policies, expectations, and assignments:
 Assessments will be either in the form of collected homework sets, quizzes, or labs.
 
 Attendance and Participation:
 * To do well in this class, you need to be actively involved: paying attention to class, trying problems, asking questions, and working on activities.
 * Productive participation also means you need to come to class. If you miss more than four classes-for any reason except for religious observance - your participation grade may be lowered; if you miss more than 8 classes, you may be dropped from the course.
-* Recent research has shown that students who use a smartphone or laptop in class have lower grades than those who don't; research has also indicated that using a smartphone or laptop distracts other students in class. Any off-task use of smart phones, laptops, or other mobile communication devices (i.e., for purposes other than Calculus) is therefore prohibited during class. Those using such devices will be marked as absent.
+* Use of cell phones, headphones, etc. during class is a distraction to yourself and to your classmates. As such, use of these devices will be prohibited during class time.
 * You are responsible for any material or assignments you miss in the event of an absence. Students missing class for religious observance or other university-sanctioned reasons should contact me ahead of time to make alternate arrangements. You can read the official college attendance policy at: http://www.ithaca.edu/attorney/policies/vol7/Volume_7-70202.htm.
 
 ### Late work
