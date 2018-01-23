@@ -19,6 +19,8 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 ## Datasets
 * [cdc](./data/cdc.csv), <https://www.cdc.gov/brfss/>
 
+## [Slides](./slides/)
+
 ## Articles
 * [What I was Wrong About, NYT](https://www.nytimes.com/2017/12/24/opinion/2017-wrong-numbers.html)
 
