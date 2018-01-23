@@ -17,8 +17,8 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 * [FAQ](./faq.md)
 
 ## Datasets
-Datasets will be here
+* [cdc](./data/cdc.csv), https://www.cdc.gov/brfss/
 
 ## Additional links
 * [DataCamp](https://www.datacamp.com/)
-* [The repo for this website](https://github.com/mthomas7/246/)
+* [R Links](https://mthomas7.github.io/links/)
