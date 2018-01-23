@@ -11,9 +11,9 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 * [Rstudio](https://www.rstudio.com/)
 * [Github](https://github.com/), [notes](./github)
 * R Packages (my notes):
-  * [dplyr](./dplyr)
-  * [ggplot2](./ggplot)
-  * [RMarkdown](./rmarkdown)
+  * [dplyr](./notes/dplyr.html)
+  * [ggplot2](./notes/ggplot.html)
+  * [RMarkdown](./notes/rmarkdown.html)
 * [FAQ](./faq.md)
 
 ## Datasets
