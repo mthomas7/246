@@ -32,9 +32,7 @@ What is the difference?
 
 (Google it)
 
-## Start to review {.col2}
-
-Some terms
+## Start to review
 
 * observational unit
 * variable
@@ -46,13 +44,10 @@ Some terms
 * statistic
 * experiment
 
-More terms
+## More terms
 
 * observational study
 * hypothesis test
 * p-value
 * confidence interval
 * normal model
-
-
-## 
