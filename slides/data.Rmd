@@ -1,0 +1,105 @@
+---
+title: "Data"
+author: "Math 246"
+date: "January 24, 2018"
+output: ioslides_presentation
+---
+
+## NYT Article
+
+## Where we're going
+* Datacamp
+* Manipulating data
+* Graphing data
+* Analysis, etc.
+
+## Data Structure
+
+* Open RStudio, we'll import the cdc dataset
+* For each variable, what type is it?
+
+## R Basics
+* Importing data
+* Assignment (<-)
+* Picking variables ($)
+* Functions (e.g. dim, as.factor)
+* Packages
+* factors
+* data frames
+* A note on `attach()` (why I don't think you should use it)
+
+## Summaries and data wrangling
+
+* There are many ways to do this (as there are for every task in R)
+* We will use a package called `dplyr`
+  * Part of the "tidyverse"
+  * Your next homework will be to work through a unit on Datacamp
+  
+## dplyr
+* tbls and tbl_df()
+* pipe
+* select
+* mutate
+* filter
+* arrange
+* summarize
+* group_by  
+
+## An example
+`cdc %>% filter(gender=="f") %>% summarize(mean_height=mean(height))`
+`cdc %>% filter(gender=="m") %>% summarize(mean_height=mean(height))`
+
+can also do this other ways, but I think this is the most readable
+
+`cdc %>% group_by(gender) %>% summarize(mean_height=mean(height))`
+
+## More "chapter 0"
+* DATA = MODEL + ERROR
+* Explanatory variables vs predictors
+* Response variables
+* Choose, fit, assess, use
+
+## Notation
+* $Y = \mu_i + \epsilon$
+* $Y = \mu_1+\epsilon \sim N(\mu_1,\sigma_1)$
+* Parameters are typically written with Greek characters
+* Statistics are typically written with Roman/Latin characters, or with hats
+* Residuals the difference between observed and predicted values
+
+## A t-test with the cdc data set
+* Reminder - what does a t-test do?
+
+(We're not going to focus too much on this now, it's just an example)
+
+```{r include=FALSE}
+cdc <- read.csv("~/Dropbox/teaching/246page/data/cdc.csv")
+require(dplyr)
+```
+
+> * A few ways to do this in order of how much I like them (also note - this matches the output style in the book)
+
+## First
+
+```{r}
+t.test(height~gender, data=cdc)
+```
+
+## Second
+
+```{r}
+t.test(cdc$height~cdc$gender)
+```
+
+## Third
+
+```{r}
+t.test(cdc$height[cdc$gender=="m"],cdc$height[cdc$gender=="f"])
+```
+
+(this is actually useful if you have a factor variable with more than three levels)
+
+## Putting together dplyr and t.test
+
+```{r}
+cdc %>% filter(age<70) %>% t.test(height~gender, data=.)
+```
