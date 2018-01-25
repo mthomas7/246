@@ -6,6 +6,8 @@
 * [My Favorite Public Data Sources](http://www.jenunderwood.com/2016/01/14/my-favorite-public-data-sources/)
 * [Big Data: 33 Brilliant And Free Data Sources For 2016](https://www.forbes.com/sites/bernardmarr/2016/02/12/big-data-35-brilliant-and-free-data-sources-for-2016/#730f5493b54d)
 * [Top 10 Data Science Resources on Github](https://www.kdnuggets.com/2016/03/top-10-data-science-github.html)
+* [Practical Data Science for Stats - a PeerJ Collection](https://peerj.com/collections/50-practicaldatascistats/)
+* [A random collection of data sources and statistics stuff](http://statweb.calpoly.edu/bchance/stat_stuff.html)
 
 ## Articles with Data
 * [Chi Square Analysis for Halloween: Is There a Slasher Movie Gender Gap?](http://blog.minitab.com/blog/understanding-statistics/chi-square-analysis-of-halloween-and-friday-the-13th-is-there-a-slasher-movie-gender-gap)
