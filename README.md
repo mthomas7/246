@@ -20,8 +20,7 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 
 ## [Slides](./slides/)
 
-## Articles
-* [What I was Wrong About, NYT](https://www.nytimes.com/2017/12/24/opinion/2017-wrong-numbers.html)
+## [Articles](./articles/)
 
 ## Additional links
 * [DataCamp](https://www.datacamp.com/)
