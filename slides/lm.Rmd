@@ -1,0 +1,91 @@
+---
+title: "Linear Models"
+author: "Math 246"
+date: "January 29, 2018"
+output: ioslides_presentation
+---
+
+## Note
+
+We'll use the cdc dataset a little longer. As we model this, be sure to try it with the dataset (porche) used in the book
+
+# Linear Models (1.1)
+
+## Notation
+
+$$Data = Model + Error$$
+$$Y = f(X) + \epsilon$$
+$$Y = \mu_Y + \epsilon$$
+$$\mu_Y = f(X) = \beta_0+\beta_1 X$$
+$$Y = \beta_0 + \beta_1 X + \epsilon$$
+
+## Making a plot
+
+We'll use the `ggplot2` package (can also use "base" graphics), use `require(ggplot2)` and load `cdc` dataset.
+
+```{r include=FALSE}
+require(ggplot2)
+require(dplyr)
+cdc <- read.csv("~/Dropbox/teaching/246page/data/cdc.csv")
+```
+
+## Making a quick plot
+
+```{r}
+qplot(height, weight, data=cdc)
+```
+
+## Adding a best-fit line
+
+```{r}
+qplot(height, weight, data=cdc)+geom_smooth(method="lm", se=FALSE)
+```
+
+## Getting the equation for that line
+
+```{r}
+lm(weight~height, data=cdc)
+```
+
+## More Info {.smaller}
+```{r}
+summary(lm(weight~height, data=cdc))
+```
+What's the equation of the best-fitting line?
+What do the values mean?
+
+## dplyr {.smaller}
+
+Of course - there's a dplyr way to do this with pipes (if you like them)
+
+```{r}
+cdc %>% lm(weight~height, data=.) %>% summary()
+```
+
+## What Residuals Mean
+
+$$y_i = \beta_0 + \beta_1 x_i + \epsilon_i$$
+$$weight_i = \beta_0 + \beta_1 * height_i + \epsilon$$
+$$\widehat{weight} = \beta_0 + \beta_1* height$$
+
+## Residuals
+
+```{r}
+mod1 <- lm(weight~height, data=cdc)
+mod1$residuals
+```
+
+## Summarize residuals {.smaller}
+
+```{r}
+summary(mod1$residuals)
+```
+## Plot residuals
+
+```{r}
+qplot(mod1$residuals)
+```
+
+# Conditions for Linear Models (1.2)
+
+## 

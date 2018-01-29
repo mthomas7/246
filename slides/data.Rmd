@@ -47,6 +47,7 @@ output: ioslides_presentation
 
 ## An example
 `cdc %>% filter(gender=="f") %>% summarize(mean_height=mean(height))`
+
 `cdc %>% filter(gender=="m") %>% summarize(mean_height=mean(height))`
 
 can also do this other ways, but I think this is the most readable

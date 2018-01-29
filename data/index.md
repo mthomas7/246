@@ -1,5 +1,6 @@
-# Datasets
-* [cdc](./cdc.csv), <https://www.cdc.gov/brfss/>
+# Datasets (book datasets available at <http://www.stat2.org/>)
+* [cdc](./cdc.csv), Info at <https://www.cdc.gov/brfss/>
+* [porche](./PorschePrice.csv)
 
 # Data websites
 * [Package of data sets](https://simplystatistics.org/2018/01/22/the-dslabs-package-provides-datasets-for-teaching-data-science/)
