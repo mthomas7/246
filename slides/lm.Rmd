@@ -41,6 +41,11 @@ qplot(height, weight, data=cdc)
 qplot(height, weight, data=cdc)+geom_smooth(method="lm", se=FALSE)
 ```
 
+## Method of finding best fit line
+
+* SSE - sum of squares of the error
+* least sqaures line
+
 ## Getting the equation for that line
 
 ```{r}
@@ -80,7 +85,8 @@ mod1$residuals
 ```{r}
 summary(mod1$residuals)
 ```
-## Plot residuals
+
+## Plot residuals {.smaller}
 
 ```{r}
 qplot(mod1$residuals)

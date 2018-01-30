@@ -67,6 +67,8 @@ can also do this other ways, but I think this is the most readable
 * Statistics are typically written with Roman/Latin characters, or with hats
 * Residuals the difference between observed and predicted values
 
+<!--
+
 ## A t-test with the cdc data set
 * Reminder - what does a t-test do?
 
@@ -104,3 +106,5 @@ t.test(cdc$height[cdc$gender=="m"],cdc$height[cdc$gender=="f"])
 ```{r}
 cdc %>% filter(age<70) %>% t.test(height~gender, data=.)
 ```
+
+-->

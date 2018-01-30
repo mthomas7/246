@@ -3196,83 +3196,104 @@ if (document.readyState !== "loading" &&
 <li>Residuals the difference between observed and predicted values</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>A t-test with the cdc data set</h2></hgroup><article  id="a-t-test-with-the-cdc-data-set">
+<!--
 
-<ul>
-<li>Reminder - what does a t-test do?</li>
-</ul>
+## A t-test with the cdc data set
+* Reminder - what does a t-test do?
 
-<p>(We’re not going to focus too much on this now, it’s just an example)</p>
+(We're not going to focus too much on this now, it's just an example)
 
-<ul class = 'build'>
-<li>A few ways to do this in order of how much I like them (also note - this matches the output style in the book)</li>
-</ul>
 
-</article></slide><slide class=""><hgroup><h2>First</h2></hgroup><article  id="first">
 
-<pre class = 'prettyprint lang-r'>t.test(height~gender, data=cdc)</pre>
+> * A few ways to do this in order of how much I like them (also note - this matches the output style in the book)
 
-<pre >## 
+## First
+
+
+```r
+t.test(height~gender, data=cdc)
+```
+
+```
+## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  height by gender
-## t = -143.08, df = 19484, p-value &lt; 2.2e-16
+## t = -143.08, df = 19484, p-value < 2.2e-16
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
 ##  -5.964501 -5.803291
 ## sample estimates:
 ## mean in group f mean in group m 
-##        64.36775        70.25165</pre>
+##        64.36775        70.25165
+```
 
-</article></slide><slide class=""><hgroup><h2>Second</h2></hgroup><article  id="second">
+## Second
 
-<pre class = 'prettyprint lang-r'>t.test(cdc$height~cdc$gender)</pre>
 
-<pre >## 
+```r
+t.test(cdc$height~cdc$gender)
+```
+
+```
+## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  cdc$height by cdc$gender
-## t = -143.08, df = 19484, p-value &lt; 2.2e-16
+## t = -143.08, df = 19484, p-value < 2.2e-16
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
 ##  -5.964501 -5.803291
 ## sample estimates:
 ## mean in group f mean in group m 
-##        64.36775        70.25165</pre>
+##        64.36775        70.25165
+```
 
-</article></slide><slide class=""><hgroup><h2>Third</h2></hgroup><article  id="third">
+## Third
 
-<pre class = 'prettyprint lang-r'>t.test(cdc$height[cdc$gender==&quot;m&quot;],cdc$height[cdc$gender==&quot;f&quot;])</pre>
 
-<pre >## 
+```r
+t.test(cdc$height[cdc$gender=="m"],cdc$height[cdc$gender=="f"])
+```
+
+```
+## 
 ##  Welch Two Sample t-test
 ## 
-## data:  cdc$height[cdc$gender == &quot;m&quot;] and cdc$height[cdc$gender == &quot;f&quot;]
-## t = 143.08, df = 19484, p-value &lt; 2.2e-16
+## data:  cdc$height[cdc$gender == "m"] and cdc$height[cdc$gender == "f"]
+## t = 143.08, df = 19484, p-value < 2.2e-16
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
 ##  5.803291 5.964501
 ## sample estimates:
 ## mean of x mean of y 
-##  70.25165  64.36775</pre>
+##  70.25165  64.36775
+```
 
-<p>(this is actually useful if you have a factor variable with more than three levels)</p>
+(this is actually useful if you have a factor variable with more than three levels)
 
-</article></slide><slide class=""><hgroup><h2>Putting together dplyr and t.test</h2></hgroup><article  id="putting-together-dplyr-and-t.test">
+## Putting together dplyr and t.test
 
-<pre class = 'prettyprint lang-r'>cdc %&gt;% filter(age&lt;70) %&gt;% t.test(height~gender, data=.)</pre>
 
-<pre >## 
+```r
+cdc %>% filter(age<70) %>% t.test(height~gender, data=.)
+```
+
+```
+## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  height by gender
-## t = -133.86, df = 17417, p-value &lt; 2.2e-16
+## t = -133.86, df = 17417, p-value < 2.2e-16
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
 ##  -5.931278 -5.760087
 ## sample estimates:
 ## mean in group f mean in group m 
-##        64.49587        70.34156</pre></article></slide>
+##        64.49587        70.34156
+```
+
+--></article></slide>
 
 
   <slide class="backdrop"></slide>
