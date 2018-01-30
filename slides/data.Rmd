@@ -54,6 +54,10 @@ can also do this other ways, but I think this is the most readable
 
 `cdc %>% group_by(gender) %>% summarize(mean_height=mean(height))`
 
+## An important feature of data sets
+
+* *Generally* the order of columns and rows does not matter
+
 ## More "chapter 0"
 * DATA = MODEL + ERROR
 * Explanatory variables vs predictors
