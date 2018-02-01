@@ -7,6 +7,7 @@
   * Office location: Williams 311A
   * Office hours: M 1-2, T 2:30-3:30, W 12-1 (Or by appointment)
   * Additionally, I will be available in the Math tutorial room (Williams 318) on Mondays from 12:00-1:00.
+  * Brittany has offered to have an extra office hour: Thursdays from 6-7 in Williams 318.
   * Instructor e-mail: mthomas7@ithaca.edu
 * Website: [https://mthomas7.github.io/246/](https://mthomas7.github.io/246/)
 
@@ -72,7 +73,7 @@ All homework deadlines will be posted on the course website. For the regular hom
 
 ### Thoughts about doing well in the course
 #### Doing the work
-I like watching hockey. I've watched games in person and on tv. If you expect that this makes me quite a good hockey player, you are very wrong. As it turns out, watching hockey doesn't make you a better hockey player, and watching someone do math doesn't make you better at doing math. In order to understand math, you need to do math. To best accomplish this, you will need to spend time actively doing math problems. To use our class time most effectively, you will need to read sections of the text to prepare for class. During class we will discuss the material, work problems together (as a class and in small groups), and make sense of the material together. If you do not do the reading ahead of time, you will probably find that class will not make as much sense as if you prepare. 
+I like watching hockey. I've watched games in person and on tv. If you expect that this makes me quite a good hockey player, you are very wrong. As it turns out, watching hockey doesn't make you a better hockey player, and watching someone do math doesn't make you better at doing math. In order to understand math, you need to do math. To best accomplish this, you will need to spend time actively doing math problems. To use our class time most effectively, you will need to read sections of the text to prepare for class. During class we will discuss the material, work problems together (as a class and in small groups), and make sense of the material together. If you do not do the reading ahead of time, you will probably find that class will not make as much sense as if you prepare.
 Links for the course calendar are posted online - check this periodically (as it may change during the semester). You can import it into whatever calendar program you use.
 
 #### Reading a math book
