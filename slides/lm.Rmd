@@ -94,4 +94,89 @@ qplot(mod1$residuals)
 
 # Conditions for Linear Models (1.2)
 
-## 
+## Conditions
+
+"We hope that the residuals are small and contain no pattern that could be exploited to better explain the response variable."
+
+## Linearity
+
+"The overall relationship between the variables has a linear pattern. The average values of the response Y for each value of X fall on a common straight line."
+
+(Plot them)
+
+## Zero Mean (of residuals)
+
+"The error distribution is centered at zero. This means that the points are scattered at random above and below the line. (Note: By using least squares regression, we force the residual mean to be zero. Other techniques would not necessarily satisfy this condition.)"
+
+## Constant Variance (homoscedasticity)
+
+"The variability in the errors is the same for all values of the predictor variable. This means that the spread of points around the line remains fairly constant."
+
+## Testing constant variance
+
+```{r}
+mod2 <- lm(weight~height, data=cdc)
+qplot(height, mod2$residuals, data=cdc)
+```
+
+## Another example
+```{r}
+mod3 <- lm(height~age, data=cdc)
+qplot(age,mod3$residuals, data=cdc)
+```
+
+## Independence
+"The errors are assumed to be independent from one another. Thus, one point falling above or below the line has no influence on the location of another point."
+
+## Inference Assumptions
+
+"When we are interested in using the model to make formal inferences (conducting hypothesis tests or providing confidence intervals), additional assumptions are needed."
+
+## Random
+"The data are obtained using a random process. Most commonly, this arises either from random sampling from a population of interest or from the use of randomization in a statistical experiment."
+
+## Normality
+"In order to use standard distributions for confidence intervals and hypothesis tests, we often need to assume that the random errors follow a normal distribution."
+
+## Testing normality
+
+```{r message=FALSE}
+qplot(mod3$residuals)
+```
+
+---
+
+```{r message=FALSE}
+qplot(mod2$residuals)
+```
+
+## Standard Errors with a toy dataset
+
+```{r}
+mtcars
+```
+
+## Regression standard error
+
+Standard deviation of the error term
+
+$$\widehat{\sigma_\epsilon} = \sqrt{\frac{SSE}{n-2}}$$
+
+---
+
+```{r}
+mtcars %>% lm(mpg~wt, data=.) %>% summary()
+```
+
+```{r}
+qplot(wt, mpg, data=mtcars) +
+    geom_smooth(method="lm")
+```
+
+## Github and/or pick your own dataset and/or RMarkdown
+
+
+
+
+
+
