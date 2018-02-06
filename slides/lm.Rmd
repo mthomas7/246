@@ -173,7 +173,11 @@ qplot(wt, mpg, data=mtcars) +
     geom_smooth(method="lm")
 ```
 
-## Github and/or pick your own dataset and/or RMarkdown
+## Where we are
+
+* Github 
+* Pick your own dataset: lab 0
+* RMarkdown
 
 ## Assumptions
 * Assumptions vs conditions
