@@ -10,6 +10,7 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 * [R](https://cran.r-project.org/)
 * [Rstudio](https://www.rstudio.com/)
 * [Github](https://github.com/)
+* [Happy Git With R](http://happygitwithr.com/)
 
 ## [Labs](./labs.html)
 
