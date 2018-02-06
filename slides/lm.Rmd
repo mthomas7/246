@@ -26,7 +26,7 @@ We'll use the `ggplot2` package (can also use "base" graphics), use `require(ggp
 ```{r include=FALSE}
 require(ggplot2)
 require(dplyr)
-cdc <- read.csv("~/Dropbox/teaching/246page/data/cdc.csv")
+cdc <- read.csv("~/Dropbox/teaching/246/data/cdc.csv")
 ```
 
 ## Making a quick plot
@@ -175,8 +175,116 @@ qplot(wt, mpg, data=mtcars) +
 
 ## Github and/or pick your own dataset and/or RMarkdown
 
+## Assumptions
+* Assumptions vs conditions
 
+Not standard, but I consider:
+* Randomly collected data - assumption
+* Homoscedasticity or normality - condition
 
+# Assessing Conditions (1.3)
 
+## Residuals vs fits
 
+* We already looked at residuals vs predictor
+* Now we look at residual vs predicted
+* The book has some nice graphs of what these can look like, we'll generate some
 
+## Example {.smaller}
+
+Reminder:
+
+```{r}
+summary(mod2)
+```
+
+---
+
+```{r}
+qplot(mod2$fitted.values, mod2$residuals)
+```
+
+## Making up some data {.smaller}
+
+```{r}
+x <- rnorm(50,5,2)
+noise <- rnorm(50,0,3)
+y <- 2*x^2+4+x+3+noise
+qplot(x,y)
+```
+
+## Running a lm {.smaller}
+
+```{r}
+randmod <- lm(y~x)
+summary(randmod)
+```
+
+## Assessing the fit
+
+```{r}
+qplot(x,randmod$residuals)
+```
+
+---
+
+```{r}
+qplot(randmod$residuals, randmod$fitted.values)
+```
+
+---
+
+```{r message=FALSE, warning=FALSE}
+qplot(randmod$residuals)
+```
+
+## qqplots (normal plot)
+
+```{r}
+qqnorm(mod2$residuals)
+```
+
+---
+
+```{r}
+qqnorm(mod3$residuals)
+```
+
+---
+
+```{r}
+qqnorm(randmod$residuals)
+```
+
+## Perfect qqnorm plot
+
+```{r}
+normaldata <- rnorm(500,34,17)
+qqnorm(normaldata)
+```
+
+## Model assessment
+
+* Linearity
+* Zero mean
+* Constant variance
+* Independent and random
+* Normality
+
+## Model use: Making predictions {.smaller}
+
+```{r}
+summary(mod3)
+```
+
+---
+
+Suppose age is 27:
+```{r}
+new <- data.frame(age=c(27, 28, 29))
+predict.lm(mod3, new)
+```
+
+# Transformations (1.4)
+
+## What to do when the lm assumptions/conditions aren't satisfied
