@@ -11,6 +11,8 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 * [Rstudio](https://www.rstudio.com/)
 * [Github](https://github.com/)
 
+## [Labs](./labs.html)
+
 <!--[notes](./github)-->
 
 <!--* R Packages (my notes):
