@@ -289,6 +289,10 @@ new <- data.frame(age=c(27, 28, 29))
 predict.lm(mod3, new)
 ```
 
+## Note
+
+Recommended datacamp (not required) course: Correlation and Regression
+
 # Transformations (1.4)
 
 ## What to do when the lm assumptions/conditions aren't satisfied?
