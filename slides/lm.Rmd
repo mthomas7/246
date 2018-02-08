@@ -233,7 +233,7 @@ qplot(x,randmod$residuals)
 ---
 
 ```{r}
-qplot(randmod$residuals, randmod$fitted.values)
+qplot(randmod$fitted.values, randmod$residuals)
 ```
 
 ---
@@ -291,4 +291,125 @@ predict.lm(mod3, new)
 
 # Transformations (1.4)
 
-## What to do when the lm assumptions/conditions aren't satisfied
+## What to do when the lm assumptions/conditions aren't satisfied?
+
+* In particular, normality of residuals and/or constant variance of residuals
+* Can also be useful if we can "see" that the relationship is not linear
+
+## The usual tools
+
+* Transform one or the other variable using:
+  * Square
+  * Square root
+  * Inverse
+  * log (log in R is ln)
+  
+## Example Dataset
+
+```{r}
+wordrecall <- read.delim("~/Dropbox/teaching/246/data/wordrecall.txt")
+wordrecall <- tbl_df(wordrecall)
+wordrecall
+```
+
+## Model {.smaller}
+```{r}
+wordmodel <- lm(prop ~ time, data=wordrecall)
+summary(wordmodel)
+```
+
+
+## Graphs
+
+```{r}
+wordrecall %>% qplot(time, prop, data=.)+geom_smooth(method="lm", se=F)
+```
+
+---
+
+```{r}
+qplot(wordmodel$fitted.values, wordmodel$residuals)
+```
+
+---
+
+```{r}
+qqnorm(wordmodel$residuals)
+```
+
+
+## How do we fix this?
+
+* Transform the variables
+* Use mutate() to construct new variables which might work better, e.g.: log of prop, log of time, prop^-1.25, etc.
+* What works well?
+
+```{r}
+wordrecall <- wordrecall %>% mutate(logprop = log(prop))
+wordrecall
+```
+
+## Using our best model, let's make some prediction
+
+Pick a time. What is the expected proportion of words recalled at that time?
+
+## Note
+
+Taking the square root of y is not the same as a quadratic regression. What's the difference?
+
+# 1.5 Outliers and where to find them
+
+## Terms
+
+* Standardized residuals: make residuals into z-scores
+* Studentized (deleted-t) residuals: remove outliers to find std error, then determine residual
+
+## Reminder {.smaller}
+
+```{r}
+summary(wordmodel)
+```
+
+---
+
+```{r}
+stdres <- rstandard(wordmodel)
+stdres
+```
+
+---
+
+```{r}
+qplot(wordmodel$fitted.values, stdres)
+```
+
+---
+
+```{r}
+studres <- rstudent(wordmodel)
+studres
+```
+
+---
+
+```{r}
+qplot(wordmodel$fitted.values, studres)
+```
+
+## Another example
+
+* The PalmBeach dataset is an excellent example. I'll also show that we don't have to download the data to our computer first:
+
+```{r}
+library(readr)
+PalmBeach <- read_csv("http://stat2.org/datasets/PalmBeach.csv")
+```
+
+(Note there are also rda files on the stat2 website!)
+
+How can we recreate the analysis with and without the outlier in R?
+
+## Terms
+
+* influence: how well the point aligns to the trend
+* leverage: how far the point ($x$) is from the mean of the predictors ($\bar{x}$)

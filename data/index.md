@@ -1,6 +1,7 @@
 # Datasets (book datasets available at <http://www.stat2.org/>)
 * [cdc](./cdc.csv), Info at <https://www.cdc.gov/brfss/>
 * [porche](./PorschePrice.csv)
+* [word recall, from PSU](./wordrecall.txt)
 * [college scorecard](https://collegescorecard.ed.gov/data/)
 
 # Data websites
