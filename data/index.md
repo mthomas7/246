@@ -12,6 +12,7 @@
 * [Practical Data Science for Stats - a PeerJ Collection](https://peerj.com/collections/50-practicaldatascistats/)
 * [A random collection of data sources and statistics stuff](http://statweb.calpoly.edu/bchance/stat_stuff.html)
 * [Robin Lock's Page of Datasets](http://it.stlawu.edu/~rlock/datasurf.html)
+* [FiveThirtyEight's Github Page](https://github.com/fivethirtyeight)
 
 ## Articles with Data
 * [Chi Square Analysis for Halloween: Is There a Slasher Movie Gender Gap?](http://blog.minitab.com/blog/understanding-statistics/chi-square-analysis-of-halloween-and-friday-the-13th-is-there-a-slasher-movie-gender-gap)
