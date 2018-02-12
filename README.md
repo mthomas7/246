@@ -11,6 +11,7 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 * [Rstudio](https://www.rstudio.com/)
 * [Github](https://github.com/)
 * [Happy Git With R](http://happygitwithr.com/)
+* [Textbook on Intro Stats using R](http://moderndive.com/)
 
 ## [Labs](./labs.html)
 
