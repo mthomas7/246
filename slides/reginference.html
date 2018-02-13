@@ -3131,7 +3131,7 @@ if (document.readyState !== "loading" &&
 ## mean in group 0 mean in group 1 
 ##        66.38832        67.45387</pre>
 
-</article></slide><slide class=""><hgroup><h2>Regression version</h2></hgroup><article  id="regression-version" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Regression version</h2></hgroup><article  class="smaller" id="regression-version">
 
 <pre class = 'prettyprint lang-r'>cdc %&gt;% lm(height~exerany, data=.) %&gt;% summary()</pre>
 
@@ -3162,7 +3162,7 @@ if (document.readyState !== "loading" &&
 
 <p>Recall a 2-sample t-test: \[t = \frac{\hat{x_1}-\hat{x_2}}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}} = \frac{\textrm{diff of means}}{\textrm{std error}}\]</p>
 
-</article></slide><slide class=""><hgroup><h2>The Continuous Case</h2></hgroup><article  id="the-continuous-case" class="smaller">
+</article></slide><slide class=""><hgroup><h2>The Continuous Case</h2></hgroup><article  class="smaller" id="the-continuous-case">
 
 <pre class = 'prettyprint lang-r'>cdc %&gt;% lm(height~age, data=.) %&gt;% summary()</pre>
 
@@ -3288,7 +3288,9 @@ anova(mod1)</pre>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</pre>
 
-<p>Can also do: <code>cdc %&gt;% lm(height~age, data=.) %&gt;% lm() %&gt;% anova()</code></p></article></slide>
+<p>Can also do:</p>
+
+<p><code>cdc %&gt;% lm(height~age, data=.) %&gt;% lm() %&gt;% anova()</code></p></article></slide>
 
 
   <slide class="backdrop"></slide>
