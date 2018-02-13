@@ -1,0 +1,115 @@
+---
+title: "Inference for Regression"
+author: "Math 246"
+date: "February 13, 2018"
+output: ioslides_presentation
+---
+
+# Inference for Regression Slope (2.1)
+
+## A slight detour - t-tests
+
+```{r warning=TRUE, include=FALSE}
+require(dplyr)
+require(ggplot2)
+cdc <- read.csv("~/Dropbox/teaching/246/data/cdc.csv")
+```
+
+Loaded dplyr and cdc dataset:
+
+```{r}
+cdc %>% t.test(height~exerany, data=.)
+```
+
+## Regression version {.smaller}
+
+```{r}
+cdc %>% lm(height~exerany, data=.) %>% summary()
+```
+
+## What's going on?
+
+Regression: $\widehat{height} = 66.38832+1.06555*\textrm{exerany}$
+
+Whether the slope is "meaningful" is the same question as whether there's a difference between groups. (That's a t-test)
+
+Recall a 2-sample t-test: $$t = \frac{\hat{x_1}-\hat{x_2}}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}} = \frac{\textrm{diff of means}}{\textrm{std error}}$$
+
+## The Continuous Case {.smaller}
+
+```{r}
+cdc %>% lm(height~age, data=.) %>% summary()
+```
+
+## The values
+
+$t = \frac{\hat{\beta_1}}{SE_{\hat{\beta_1}}}$
+
+IMPORTANT: STANDARD ERROR OF SLOPE $SE_{\hat{\beta_1}}$ $\neq$ STANDARD ERROR OF REGRESSION $\hat{\sigma}_\epsilon$
+
+$$\widehat{\sigma_\epsilon} = \sqrt{\frac{SSE}{n-2}}, \ SE_{\hat{\beta_1}} = \sqrt{\frac{\sum (y_i - \hat{y}_i)^2 /(n-2)}{\sum (x_i - \bar{x})^2}}$$
+
+## The formal test
+
+Using conditions/assumptions for simple linear model:
+
+$H_0: \beta_1 = 0$
+
+$H_A: \beta_1 \neq 0$
+
+With test statistic $t = \frac{\hat{\beta_1}}{SE_\hat{\beta_1}}$, $n-2$ degrees of freedom
+
+## Asides
+
+* You can do a 1-tailed test, but this isn't typically done in regression
+* You can remove the intercept ($y = \beta_1*x + \epsilon$) but you should have a good reason to do so
+* You can do a similar test for intercept, though it is usually less interesting. The slope is usually where the interesting stuff is happening
+
+## Confidence Intervals
+
+```{r}
+cdc %>% t.test(height~exerany, data=.)
+```
+
+---
+
+```{r}
+cdc %>% lm(height~exerany, data=.) %>% summary()
+```
+
+## Formulas
+
+Confidence intervals:
+$ \hat{\beta_1} \pm t^* * SE_{\hat{\beta_1}}$
+
+To get $t^*$:
+```{r}
+qt(.975, 19998)
+```
+
+
+# ANOVA (2.2)
+
+## How it works
+
+Ananlysis of variance is all about splitting up variation in Y between the model and the residuals. We'll walk through the equations in the section.
+
+$y - \bar{y} = (\hat{y}-\bar{y}) + (y - \hat{y})$ (model and residual)
+
+ANOVA sum of squares identity:
+
+$\sum (y - \bar{y})^2 = \sum (\hat{y} - \bar{y})^2 + \sum(y - \hat{y})^2$ (this is not obvious)
+
+SSTotal = SSModel + SSE
+
+## Example
+
+```{r}
+mod1 <- lm(height~age, data=cdc)
+anova(mod1)
+```
+ 
+ Can also do:
+ 
+`cdc %>% lm(height~age, data=.) %>% lm() %>% anova()`
+ 
