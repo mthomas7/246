@@ -3111,7 +3111,20 @@ if (document.readyState !== "loading" &&
           </hgroup>
   </slide>
 
-<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Inference for Regression Slope (2.1)</h2></hgroup><article  id="inference-for-regression-slope-2.1">
+<slide class=""><hgroup><h2>Some theoretical concerns</h2></hgroup><article  id="some-theoretical-concerns">
+
+<p>The coefficients in a linear regression are given by: \[\hat{\beta}_0 = \bar{y}-\hat{\beta_1} \bar{x}\]</p>
+
+<p>\[\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}\]</p>
+
+<p>Show that:</p>
+
+<ul>
+<li>\((\bar{x}, \bar{y})\) is on the regression line</li>
+<li>\(\sum y_i-\hat{y}_i=0\)</li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Inference for Regression Slope (2.1)</h2></hgroup><article  id="inference-for-regression-slope-2.1">
 
 </article></slide><slide class=""><hgroup><h2>A slight detour - t-tests</h2></hgroup><article  id="a-slight-detour---t-tests">
 
@@ -3131,7 +3144,7 @@ if (document.readyState !== "loading" &&
 ## mean in group 0 mean in group 1 
 ##        66.38832        67.45387</pre>
 
-</article></slide><slide class=""><hgroup><h2>Regression version</h2></hgroup><article  class="smaller" id="regression-version">
+</article></slide><slide class=""><hgroup><h2>Regression version</h2></hgroup><article  id="regression-version" class="smaller">
 
 <pre class = 'prettyprint lang-r'>cdc %&gt;% lm(height~exerany, data=.) %&gt;% summary()</pre>
 
@@ -3162,7 +3175,7 @@ if (document.readyState !== "loading" &&
 
 <p>Recall a 2-sample t-test: \[t = \frac{\hat{x_1}-\hat{x_2}}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}} = \frac{\textrm{diff of means}}{\textrm{std error}}\]</p>
 
-</article></slide><slide class=""><hgroup><h2>The Continuous Case</h2></hgroup><article  class="smaller" id="the-continuous-case">
+</article></slide><slide class=""><hgroup><h2>The Continuous Case</h2></hgroup><article  id="the-continuous-case" class="smaller">
 
 <pre class = 'prettyprint lang-r'>cdc %&gt;% lm(height~age, data=.) %&gt;% summary()</pre>
 

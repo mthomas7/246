@@ -5,6 +5,18 @@ date: "February 13, 2018"
 output: ioslides_presentation
 ---
 
+## Some theoretical concerns
+
+The coefficients in a linear regression are given by:
+$$\hat{\beta}_0 = \bar{y}-\hat{\beta_1} \bar{x}$$
+
+$$\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}$$
+
+Show that:
+
+* $(\bar{x}, \bar{y})$ is on the regression line
+* $\sum y_i-\hat{y}_i=0$
+
 # Inference for Regression Slope (2.1)
 
 ## A slight detour - t-tests
