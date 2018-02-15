@@ -2,7 +2,7 @@
 * [cdc](./cdc.csv), Info at <https://www.cdc.gov/brfss/>
 * [porche](./PorschePrice.csv)
 * [word recall, from PSU](./wordrecall.txt)
-* [imdb](./movies.csv)
+* [imdb](./movies.csv), from <https://www.kaggle.com/orgesleka/imdbmovies>
 * [college scorecard](https://collegescorecard.ed.gov/data/)
 
 # Data websites
