@@ -77,6 +77,11 @@ With test statistic $t = \frac{\hat{\beta_1}}{SE_\hat{\beta_1}}$, $n-2$ degrees 
 * You can remove the intercept ($y = \beta_1*x + \epsilon$) but you should have a good reason to do so
 * You can do a similar test for intercept, though it is usually less interesting. The slope is usually where the interesting stuff is happening
 
+## Question
+
+The standard deviation of the error or regression standard error, $\widehat{\sigma_\epsilon}$, isn't *quite* the 
+"average of the errors." Why?
+
 ## Confidence Intervals
 
 ```{r}
@@ -104,24 +109,83 @@ qt(.975, 19998)
 
 ## How it works
 
-Ananlysis of variance is all about splitting up variation in Y between the model and the residuals. We'll walk through the equations in the section.
+Analysis of variance is all about splitting up variation in Y between the model and the residuals. We'll walk through the equations in the section.
 
 $y - \bar{y} = (\hat{y}-\bar{y}) + (y - \hat{y})$ (model and residual)
 
 ANOVA sum of squares identity:
 
-$\sum (y - \bar{y})^2 = \sum (\hat{y} - \bar{y})^2 + \sum(y - \hat{y})^2$ (this is not obvious)
+$\sum (y - \bar{y})^2 = \sum (\hat{y} - \bar{y})^2 + \sum(y - \hat{y})^2$
+
+(this is not obvious)
 
 SSTotal = SSModel + SSE
 
-## Example
+## What's going on?
+
+```{r}
+cdc %>% qplot(age, height, data=.) + geom_smooth(method="lm", se=F)
+```
+
+
+## Example {.smaller}
+
+```{r}
+mod1 <- lm(height~age, data=cdc)
+summary(mod1)
+```
+
+---
 
 ```{r}
 mod1 <- lm(height~age, data=cdc)
 anova(mod1)
 ```
  
- Can also do:
+Can also do:
  
-`cdc %>% lm(height~age, data=.) %>% lm() %>% anova()`
+`cdc %>% lm(height~age, data=.) %>% anova()`
  
+if you want to use pipes
+ 
+## Interpreting
+ 
+How do we interpret this table?
+ 
+## Drawing distributions
+ 
+This isn't *necessary*, but it's cool.
+ 
+```{r}
+curve(dnorm(x),-5,5)
+```
+ 
+ ---
+ 
+```{r}
+curve(dt(x,30),-5,5,col="red")
+curve(dt(x,1),-5,5, add=TRUE, col="green")
+```
+ 
+ ---
+ 
+```{r}
+curve(df(x,1,19998),0,5)
+```
+ 
+## The degrees of freedom
+
+* The entire model has $n-2$ degrees of freedom.
+* SSTotal has $n-1$ degrees of freedom (this has estimated a mean)
+* SSModel has $1$ degree of freedom (this is the slope).
+* Note: $n-1= 1+(n-2)$, so the df of SSTotal is the sum of the df of SSModel and SSE (SS residuals)
+
+## Try this on your data set for lab 0
+
+# Correlation (2.3)
+
+## The values of interest
+
+Coefficient of determination: $r^2$
+
+Correlation coefficient: $r$
