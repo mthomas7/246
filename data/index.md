@@ -6,6 +6,7 @@
 * [college scorecard](https://collegescorecard.ed.gov/data/)
 
 # Data websites
+* [Data source list from UFL](http://www.stat.ufl.edu/~winner/datasets.html)
 * [Package of data sets](https://simplystatistics.org/2018/01/22/the-dslabs-package-provides-datasets-for-teaching-data-science/)
 * [My Favorite Public Data Sources](http://www.jenunderwood.com/2016/01/14/my-favorite-public-data-sources/)
 * [Big Data: 33 Brilliant And Free Data Sources For 2016](https://www.forbes.com/sites/bernardmarr/2016/02/12/big-data-35-brilliant-and-free-data-sources-for-2016/#730f5493b54d)
