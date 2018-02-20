@@ -189,3 +189,76 @@ curve(df(x,1,19998),0,5)
 Coefficient of determination: $r^2$
 
 Correlation coefficient: $r$
+
+## Definitions
+
+$$r^2 = \frac{\sum (\hat{y}-\bar{y})^2}{\sum (y - \bar{y})^2} = \frac{SSModel}{SSTotal}$$
+
+What values can $r^2$ be?
+
+$$\hat{\beta_1} = r \frac{s_Y}{s_X}$$
+
+What values can $r$ be?
+
+## t-test for correlation
+
+Let $\rho$ be the correlation. What is the null hypothesis? What is the alternative hypothesis?
+
+Assuming conditions for the simple linear model hold, 
+$$t = \frac{r \sqrt{n-2}}{\sqrt{1-r^2}}, \ df=n-2$$
+
+## Making sense of this:
+
+Let's use the goldenrod data
+```{r include=FALSE}
+require(readr)
+require(ggplot2)
+require(dplyr)
+Goldenrod <- read_csv("http://stat2.org/datasets/Goldenrod.csv")
+```
+
+```{r}
+Goldenrod
+```
+
+## Linear model for '04 {.smaller}
+
+```{r}
+Goldenrod %>% lm(Wall04~Gdiam04, data=.) %>% summary()
+```
+
+## Correlation
+
+```{r}
+cor.test(Goldenrod$Wall04,Goldenrod$Gdiam04)
+```
+
+## What happens if you switch the two variables?
+
+(Be careful of syntax)
+
+## Github in groups
+
+# Intervals for Prediction (2.4)
+
+## Confidence intervals for regression
+
+```{r}
+Goldenrod %>% qplot(Gdiam04, Wall04, data=.)
+```
+
+```{r}
+Goldenrod %>% qplot(Gdiam04, Wall04, data=.)+geom_smooth(method="lm")
+```
+
+## Why the band? {.smaller}
+
+A confidence interval for the mean response $\mu_Y$ when X takes on the value $x^*$ is:
+$$\hat{y} \pm t^* \cdot SE_{\hat{\mu}}$$
+where
+$$SE_{\hat{\mu}} = \hat{\sigma_\epsilon} \sqrt{\frac{1}{n}+\frac{(x^*-\bar{x})^2}{\sum (x - \bar{x})^2}}$$
+Which then has prediction interval for a single observation of Y when X takes on the value $x^*$:
+$$\hat{y} \pm t^* SE_{\hat{y}}$$
+Where
+$$SE_\hat{y} = \hat{\sigma_\epsilon} \sqrt{1+\frac{1}{n}+\frac{(x^*-\bar{x})^2}{\sum (x - \bar{x})^2}}$$
+
