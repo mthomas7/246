@@ -247,6 +247,8 @@ cor.test(Goldenrod$Wall04,Goldenrod$Gdiam04)
 Goldenrod %>% qplot(Gdiam04, Wall04, data=.)
 ```
 
+---
+
 ```{r}
 Goldenrod %>% qplot(Gdiam04, Wall04, data=.)+geom_smooth(method="lm")
 ```

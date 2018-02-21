@@ -12,7 +12,7 @@ output:
 ```{r include=FALSE}
 library(tidyverse)
 library(readr)
-cdc <- read_csv("data/cdc.csv")
+cdc <- read_csv("../data/cdc.csv")
 ```
 
 Predict height based on smoke100, how do we interpret the slope?
