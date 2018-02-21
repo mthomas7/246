@@ -1,0 +1,81 @@
+---
+title: "Multiple Regression"
+author: "Math 246"
+date: "February 21, 2018"
+output: 
+  ioslides_presentation: 
+    widescreen: yes
+---
+
+## Back to the CDC dataset!! {.smaller}
+
+```{r include=FALSE}
+library(tidyverse)
+library(readr)
+cdc <- read_csv("data/cdc.csv")
+```
+
+Predict height based on smoke100, how do we interpret the slope?
+
+```{r}
+cdc %>% lm(height~smoke100, data=.) %>% summary()
+```
+
+## Another model: predict height by exerany {.smaller}
+
+```{r}
+cdc %>% lm(height~exerany, data=.) %>% summary()
+```
+
+## Form of the model
+
+Note: this is a model for the population (no hats!):
+
+$$\mu_Y = \beta_0 + \beta_1 X_1 +\beta_2 X_2 + \ldots + \beta_k X_k$$
+
+$$Y = \beta_0 + \beta_1 X_1 +\beta_2 X_2 + \ldots + \beta_k X_k + \epsilon$$
+
+What's the difference?
+
+## How to run it {.smaller}
+
+What is the equation for the line of best fit?
+
+```{r}
+cdc %>% lm(height~exerany+smoke100, data=.) %>% summary()
+```
+
+## The new anova table
+
+Check df - we now have 2 degrees taken up by the predictors, so we've got $n-2-1$ for the df of the residuals. (How many values are we predicting from our model?)
+
+```{r}
+cdc %>% lm(height~exerany+smoke100, data=.) %>% anova()
+```
+
+## The new standard error of the multiple regression model:
+
+$$\hat{\sigma_\epsilon} = \sqrt{\frac{SSE}{df}} = \sqrt{\frac{SSE}{n-k-1}}$$
+
+where we have $k$ predictors.
+
+## More multivarite models  {.smaller}
+
+How do we interpret these coefficients? What is the equation of the regression line?
+
+```{r}
+cdc %>% lm(height~age+exerany, data=.) %>% summary()
+```
+
+## One more model {.smaller}
+
+```{r}
+cdc %>% lm(height~age+weight, data=.) %>% summary()
+```
+
+## Plotting these things
+
+## Assumptions
+
+* Independence
+* Constant variance for *any combination* of the predictors

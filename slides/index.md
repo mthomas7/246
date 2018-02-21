@@ -4,3 +4,4 @@
 * [Data](./data.html)
 * [Linear Regression](./lm.html)
 * [Inference for Regression](./reginference.html)
+* [Multiple Regression](./multiple.html)
