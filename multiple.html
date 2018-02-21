@@ -3111,7 +3111,7 @@ if (document.readyState !== "loading" &&
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>Back to the CDC dataset!!</h2></hgroup><article  id="back-to-the-cdc-dataset" class="smaller">
+<slide class=""><hgroup><h2>Back to the CDC dataset!!</h2></hgroup><article  class="smaller" id="back-to-the-cdc-dataset">
 
 <p>Predict height based on smoke100, how do we interpret the slope?</p>
 
@@ -3136,7 +3136,7 @@ if (document.readyState !== "loading" &&
 ## Multiple R-squared:  0.006567,   Adjusted R-squared:  0.006517 
 ## F-statistic: 132.2 on 1 and 19998 DF,  p-value: &lt; 2.2e-16</pre>
 
-</article></slide><slide class=""><hgroup><h2>Another model: predict height by exerany</h2></hgroup><article  id="another-model-predict-height-by-exerany" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Another model: predict height by exerany</h2></hgroup><article  class="smaller" id="another-model-predict-height-by-exerany">
 
 <pre class = 'prettyprint lang-r'>cdc %&gt;% lm(height~exerany, data=.) %&gt;% summary()</pre>
 
@@ -3169,7 +3169,7 @@ if (document.readyState !== "loading" &&
 
 <p>What’s the difference?</p>
 
-</article></slide><slide class=""><hgroup><h2>How to run it</h2></hgroup><article  id="how-to-run-it" class="smaller">
+</article></slide><slide class=""><hgroup><h2>How to run it</h2></hgroup><article  class="smaller" id="how-to-run-it">
 
 <p>What is the equation for the line of best fit?</p>
 
@@ -3217,7 +3217,7 @@ if (document.readyState !== "loading" &&
 
 <p>where we have \(k\) predictors.</p>
 
-</article></slide><slide class=""><hgroup><h2>More multivarite models</h2></hgroup><article  id="more-multivarite-models" class="smaller">
+</article></slide><slide class=""><hgroup><h2>More multivarite models</h2></hgroup><article  class="smaller" id="more-multivarite-models">
 
 <p>How do we interpret these coefficients? What is the equation of the regression line?</p>
 
@@ -3243,7 +3243,7 @@ if (document.readyState !== "loading" &&
 ## Multiple R-squared:  0.02591,    Adjusted R-squared:  0.02582 
 ## F-statistic:   266 on 2 and 19997 DF,  p-value: &lt; 2.2e-16</pre>
 
-</article></slide><slide class=""><hgroup><h2>One more model</h2></hgroup><article  id="one-more-model" class="smaller">
+</article></slide><slide class=""><hgroup><h2>One more model</h2></hgroup><article  class="smaller" id="one-more-model">
 
 <pre class = 'prettyprint lang-r'>cdc %&gt;% lm(height~age+weight, data=.) %&gt;% summary()</pre>
 
@@ -3266,6 +3266,8 @@ if (document.readyState !== "loading" &&
 ## Residual standard error: 3.392 on 19997 degrees of freedom
 ## Multiple R-squared:  0.3243, Adjusted R-squared:  0.3242 
 ## F-statistic:  4798 on 2 and 19997 DF,  p-value: &lt; 2.2e-16</pre>
+
+</article></slide><slide class=""><hgroup><h2>Plotting these things</h2></hgroup><article  id="plotting-these-things">
 
 </article></slide><slide class=""><hgroup><h2>Assumptions</h2></hgroup><article  id="assumptions">
 
