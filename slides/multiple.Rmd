@@ -73,9 +73,88 @@ cdc %>% lm(height~age+exerany, data=.) %>% summary()
 cdc %>% lm(height~age+weight, data=.) %>% summary()
 ```
 
-## Plotting these things
+## Age and weight
+
+Is this the same as weight=0?
+
+```{r}
+cdc %>% lm(height~age, data=.) %>% summary()
+```
+
+
+## Correlation in the predictors
+
+```{r}
+cor.test(cdc$age, cdc$weight)
+```
+
+---
+
+```{r}
+cdc %>% qplot(age,weight, data=.) + geom_smooth(method="lm")
+```
+
+## Plotting
+
+These can be plotted in 3-d graphs, but I find they are not very helpful
 
 ## Assumptions
 
 * Independence
 * Constant variance for *any combination* of the predictors
+
+## An aside
+
+Interaction terms aren't treated in the text here, but I think this is a good place to talk about them
+
+## Reminder {.smaller}
+
+```{r}
+cdc %>% lm(height~exerany+smoke100, data=.) %>% summary()
+```
+
+## New Model {.smaller}
+
+```{r}
+cdc %>% lm(height~exerany*smoke100, data=.) %>% summary()
+```
+
+## Reminder {.smaller}
+
+```{r}
+cdc %>% lm(height~age+exerany, data=.) %>% summary()
+```
+
+## New Model {.smaller}
+
+```{r}
+cdc %>% lm(height~age*exerany, data=.) %>% summary()
+```
+
+## Reminder {.smaller}
+
+```{r}
+cdc %>% lm(height~age+weight, data=.) %>% summary()
+```
+
+## New Model {.smaller}
+
+```{r}
+cdc %>% lm(height~age*weight, data=.) %>% summary()
+```
+
+# Assessing Model Fit (3.2)
+
+## Hypothesis Tests
+
+How do we set up hypothesis tests for multiple regression?
+
+Note: What do we do with a predictor that isn't statistically significant? How do we find "the best model"?
+
+## t-test
+
+The t-test has $n-k-1$ degrees of freedom when there are $k$ predictors. Why does this make sense?
+
+## Confidence intervals
+
+## ANOVA tables
