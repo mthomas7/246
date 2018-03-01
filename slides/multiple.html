@@ -3267,7 +3267,7 @@ if (document.readyState !== "loading" &&
 ## Multiple R-squared:  0.3243, Adjusted R-squared:  0.3242 
 ## F-statistic:  4798 on 2 and 19997 DF,  p-value: &lt; 2.2e-16</pre>
 
-</article></slide><slide class=""><hgroup><h2>Age and weight</h2></hgroup><article  id="age-and-weight">
+</article></slide><slide class=""><hgroup><h2>Age and weight</h2></hgroup><article  id="age-and-weight" class="smaller">
 
 <p>Is this the same as weight=0?</p>
 
@@ -3476,6 +3476,14 @@ if (document.readyState !== "loading" &&
 ## Multiple R-squared:  0.3243, Adjusted R-squared:  0.3242 
 ## F-statistic:  3199 on 3 and 19996 DF,  p-value: &lt; 2.2e-16</pre>
 
+</article></slide><slide class=""><hgroup><h2>Quick question</h2></hgroup><article  id="quick-question">
+
+<p>Why did I distinguish between predictors and explanatory variables earlier in the course?</p>
+
+</article></slide><slide class=""><hgroup><h2>Try some</h2></hgroup><article  id="try-some">
+
+<p>Use the imdb movies dataset on the website to create a multiple regression model - you pick the predictors and response variables</p>
+
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Assessing Model Fit (3.2)</h2></hgroup><article  id="assessing-model-fit-3.2">
 
 </article></slide><slide class=""><hgroup><h2>Hypothesis Tests</h2></hgroup><article  id="hypothesis-tests">
@@ -3490,7 +3498,231 @@ if (document.readyState !== "loading" &&
 
 </article></slide><slide class=""><hgroup><h2>Confidence intervals</h2></hgroup><article  id="confidence-intervals">
 
-</article></slide><slide class=""><hgroup><h2>ANOVA tables</h2></hgroup><article  id="anova-tables"></article></slide>
+<p>\(\hat{\beta_i} \pm t^* SE_{\hat{\beta_i}}\)</p>
+
+</article></slide><slide class=""><hgroup><h2>ANOVA tables</h2></hgroup><article  id="anova-tables">
+
+<ul>
+<li>One table for the model</li>
+<li>\(SSModel = \sum (\hat{y}-\bar{y})^2\)</li>
+<li>\(SSE = \sum (y-\hat{y})^2\)</li>
+<li>\(SSTotal = \sum (y - \bar{y})^2\)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>ANOVA table</h2></hgroup><article  id="anova-table">
+
+<p>Model is all the lines up to the residuals</p>
+
+<pre class = 'prettyprint lang-r'>cdc %&gt;% lm(height~age*exerany, data=.) %&gt;% anova()</pre>
+
+<pre >## Analysis of Variance Table
+## 
+## Response: height
+##                Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
+## age             1   5335  5335.1 321.8262 &lt; 2.2e-16 ***
+## exerany         1   3487  3487.1 210.3528 &lt; 2.2e-16 ***
+## age:exerany     1    148   147.8   8.9171  0.002829 ** 
+## Residuals   19996 331483    16.6                       
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</pre>
+
+<p>This looks different than the book…</p>
+
+</article></slide><slide class=""><hgroup><h2>Getting the book results…</h2></hgroup><article  id="getting-the-book-results">
+
+<pre class = 'prettyprint lang-r'>NFL &lt;- read_csv(&quot;http://stat2.org/datasets/NFL2007Standings.csv&quot;)</pre>
+
+<pre >## Parsed with column specification:
+## cols(
+##   Team = col_character(),
+##   Conference = col_character(),
+##   Division = col_character(),
+##   Wins = col_integer(),
+##   Losses = col_integer(),
+##   WinPct = col_double(),
+##   PointsFor = col_integer(),
+##   PointsAgainst = col_integer(),
+##   NetPts = col_integer(),
+##   TDs = col_integer()
+## )</pre>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<pre class = 'prettyprint lang-r'>NFL %&gt;% lm(WinPct~PointsFor+PointsAgainst, data=.) %&gt;% anova()</pre>
+
+<pre >## Analysis of Variance Table
+## 
+## Response: WinPct
+##               Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PointsFor      1 1.01724 1.01724 190.983 2.727e-14 ***
+## PointsAgainst  1 0.16411 0.16411  30.812 5.496e-06 ***
+## Residuals     29 0.15446 0.00533                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</pre>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section" class="smaller">
+
+<pre class = 'prettyprint lang-r'>NFL %&gt;% lm(WinPct~PointsFor+PointsAgainst, data=.) %&gt;% summary()</pre>
+
+<pre >## 
+## Call:
+## lm(formula = WinPct ~ PointsFor + PointsAgainst, data = .)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.15857 -0.05318 -0.01259  0.07360  0.12962 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    0.4172230  0.1394480   2.992  0.00561 ** 
+## PointsFor      0.0017662  0.0001870   9.445 2.37e-10 ***
+## PointsAgainst -0.0015268  0.0002751  -5.551 5.50e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.07298 on 29 degrees of freedom
+## Multiple R-squared:  0.8844, Adjusted R-squared:  0.8764 
+## F-statistic: 110.9 on 2 and 29 DF,  p-value: 2.598e-14</pre>
+
+</article></slide><slide class=""><hgroup><h2>Hang on to your seats</h2></hgroup><article  id="hang-on-to-your-seats">
+
+<pre class = 'prettyprint lang-r'>forFirst &lt;- NFL %&gt;% lm(WinPct~PointsFor+PointsAgainst, data=.)
+againstFirst &lt;- NFL %&gt;% lm(WinPct~PointsAgainst+PointsFor, data=.)</pre>
+
+<p>What’s the difference?</p>
+
+</article></slide><slide class=""><hgroup><h2>Sumamries</h2></hgroup><article  id="sumamries" class="smaller">
+
+<pre class = 'prettyprint lang-r'>summary(forFirst)</pre>
+
+<pre >## 
+## Call:
+## lm(formula = WinPct ~ PointsFor + PointsAgainst, data = .)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.15857 -0.05318 -0.01259  0.07360  0.12962 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    0.4172230  0.1394480   2.992  0.00561 ** 
+## PointsFor      0.0017662  0.0001870   9.445 2.37e-10 ***
+## PointsAgainst -0.0015268  0.0002751  -5.551 5.50e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.07298 on 29 degrees of freedom
+## Multiple R-squared:  0.8844, Adjusted R-squared:  0.8764 
+## F-statistic: 110.9 on 2 and 29 DF,  p-value: 2.598e-14</pre>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1" class="smaller">
+
+<pre class = 'prettyprint lang-r'>summary(againstFirst)</pre>
+
+<pre >## 
+## Call:
+## lm(formula = WinPct ~ PointsAgainst + PointsFor, data = .)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.15857 -0.05318 -0.01259  0.07360  0.12962 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    0.4172230  0.1394480   2.992  0.00561 ** 
+## PointsAgainst -0.0015268  0.0002751  -5.551 5.50e-06 ***
+## PointsFor      0.0017662  0.0001870   9.445 2.37e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.07298 on 29 degrees of freedom
+## Multiple R-squared:  0.8844, Adjusted R-squared:  0.8764 
+## F-statistic: 110.9 on 2 and 29 DF,  p-value: 2.598e-14</pre>
+
+</article></slide><slide class=""><hgroup><h2>ANOVA tables</h2></hgroup><article  id="anova-tables-1">
+
+<pre class = 'prettyprint lang-r'>anova(forFirst)</pre>
+
+<pre >## Analysis of Variance Table
+## 
+## Response: WinPct
+##               Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PointsFor      1 1.01724 1.01724 190.983 2.727e-14 ***
+## PointsAgainst  1 0.16411 0.16411  30.812 5.496e-06 ***
+## Residuals     29 0.15446 0.00533                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</pre>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<pre class = 'prettyprint lang-r'>anova(againstFirst)</pre>
+
+<pre >## Analysis of Variance Table
+## 
+## Response: WinPct
+##               Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PointsAgainst  1 0.70618 0.70618 132.583 2.455e-12 ***
+## PointsFor      1 0.47517 0.47517  89.212 2.370e-10 ***
+## Residuals     29 0.15446 0.00533                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</pre>
+
+</article></slide><slide class=""><hgroup><h2>Meet the new \(R^2\), same as the old \(R^2\)</h2></hgroup><article  id="meet-the-new-r2-same-as-the-old-r2">
+
+<p>\(R^2\) is the coefficient of determiniation (this <em>was</em> the square of the correlation coefficient)</p>
+
+<p>\[R^2 = \frac{variability \ explained \ by \ model}{total \ variability \ in \ y} = \frac{SSModel}{SSTotal} = 1 - \frac{SSE}{SSTotal}\]</p>
+
+<p>What is our correlation coefficient now?</p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-2" class="smaller">
+
+<pre class = 'prettyprint lang-r'>summary(forFirst)</pre>
+
+<pre >## 
+## Call:
+## lm(formula = WinPct ~ PointsFor + PointsAgainst, data = .)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.15857 -0.05318 -0.01259  0.07360  0.12962 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    0.4172230  0.1394480   2.992  0.00561 ** 
+## PointsFor      0.0017662  0.0001870   9.445 2.37e-10 ***
+## PointsAgainst -0.0015268  0.0002751  -5.551 5.50e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.07298 on 29 degrees of freedom
+## Multiple R-squared:  0.8844, Adjusted R-squared:  0.8764 
+## F-statistic: 110.9 on 2 and 29 DF,  p-value: 2.598e-14</pre>
+
+</article></slide><slide class=""><hgroup><h2>Where does it come from?</h2></hgroup><article  id="where-does-it-come-from">
+
+<pre class = 'prettyprint lang-r'>r &lt;- cor(forFirst$fitted.values, NFL$WinPct)
+r</pre>
+
+<pre >## [1] 0.9404083</pre>
+
+<pre class = 'prettyprint lang-r'>r^2</pre>
+
+<pre >## [1] 0.8843678</pre>
+
+</article></slide><slide class=""><hgroup><h2>Adjusted \(R^2\)</h2></hgroup><article  id="adjusted-r2">
+
+<p>\[R^2_{adj} = 1-\frac{SSE/(n-k-1)}{SSTotal/(n-1)} = 1-\frac{\hat{\sigma_\epsilon}}{S^2_Y}\]</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Comparing Regression Lines (3.3)</h2></hgroup><article  id="comparing-regression-lines-3.3">
+
+</article></slide><slide class=""><hgroup><h2>New stuff?</h2></hgroup><article  id="new-stuff">
+
+<p>Not really - we’ve already been doing this</p>
+
+<p>An <em>indicator variable</em> uses two values to denote group membership (usually 0 and 1)</p>
+
+<p>How do we compare the slopes of two different groups when we have an indicator variable? How do we tell whether they are statistically significantly different?</p></article></slide>
 
 
   <slide class="backdrop"></slide>

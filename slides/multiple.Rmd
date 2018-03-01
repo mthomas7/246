@@ -73,7 +73,7 @@ cdc %>% lm(height~age+exerany, data=.) %>% summary()
 cdc %>% lm(height~age+weight, data=.) %>% summary()
 ```
 
-## Age and weight
+## Age and weight {.smaller}
 
 Is this the same as weight=0?
 
@@ -143,6 +143,14 @@ cdc %>% lm(height~age+weight, data=.) %>% summary()
 cdc %>% lm(height~age*weight, data=.) %>% summary()
 ```
 
+## Quick question
+
+Why did I distinguish between predictors and explanatory variables earlier in the course?
+
+## Try some
+
+Use the imdb movies dataset on the website to create a multiple regression model - you pick the predictors and response variables
+
 # Assessing Model Fit (3.2)
 
 ## Hypothesis Tests
@@ -157,4 +165,108 @@ The t-test has $n-k-1$ degrees of freedom when there are $k$ predictors. Why doe
 
 ## Confidence intervals
 
+$\hat{\beta_i} \pm t^* SE_{\hat{\beta_i}}$
+
 ## ANOVA tables
+
+* One table for the model
+* $SSModel = \sum (\hat{y}-\bar{y})^2$
+* $SSE = \sum (y-\hat{y})^2$
+* $SSTotal = \sum (y - \bar{y})^2$
+
+## ANOVA table
+
+Model is all the lines up to the residuals
+
+```{r}
+cdc %>% lm(height~age*exerany, data=.) %>% anova()
+```
+
+This looks different than the book...
+
+## Getting the book results...
+
+```{r}
+NFL <- read_csv("http://stat2.org/datasets/NFL2007Standings.csv")
+```
+
+---
+
+```{r}
+NFL %>% lm(WinPct~PointsFor+PointsAgainst, data=.) %>% anova()
+```
+
+## {.smaller}
+
+```{r}
+NFL %>% lm(WinPct~PointsFor+PointsAgainst, data=.) %>% summary()
+```
+
+## Hang on to your seats
+
+```{r}
+forFirst <- NFL %>% lm(WinPct~PointsFor+PointsAgainst, data=.)
+againstFirst <- NFL %>% lm(WinPct~PointsAgainst+PointsFor, data=.)
+```
+
+What's the difference?
+
+## Sumamries {.smaller}
+
+```{r}
+summary(forFirst)
+```
+
+## {.smaller}
+
+```{r}
+summary(againstFirst)
+```
+
+## ANOVA tables
+
+```{r}
+anova(forFirst)
+```
+
+---
+
+```{r}
+anova(againstFirst)
+```
+
+## Meet the new $R^2$, same as the old $R^2$
+
+$R^2$ is the coefficient of determiniation (this *was* the square of the correlation coefficient)
+
+$$R^2 = \frac{variability \ explained \ by \ model}{total \ variability \ in \ y} = \frac{SSModel}{SSTotal} = 1 - \frac{SSE}{SSTotal}$$
+
+What is our correlation coefficient now?
+
+## {.smaller}
+
+```{r}
+summary(forFirst)
+```
+
+## Where does it come from?
+
+```{r}
+r <- cor(forFirst$fitted.values, NFL$WinPct)
+r
+r^2
+```
+
+## Adjusted $R^2$
+
+$$R^2_{adj} = 1-\frac{SSE/(n-k-1)}{SSTotal/(n-1)} = 1-\frac{\hat{\sigma_\epsilon}}{S^2_Y}$$
+
+# Comparing Regression Lines (3.3)
+
+## New stuff?
+
+Not really - we've already been doing this
+
+An *indicator variable* uses two values to denote group membership (usually 0 and 1)
+
+How do we compare the slopes of two different groups when we have an indicator variable? How do we tell whether they are statistically significantly different?
