@@ -4,6 +4,8 @@
 * [word recall, from PSU](./wordrecall.txt)
 * [imdb](./movies.csv), from <https://www.kaggle.com/orgesleka/imdbmovies>
 * [college scorecard](https://collegescorecard.ed.gov/data/)
+* [Diamonds](http://stat2.org/datasets/Diamonds.csv)
+* [Radio](MentalRadio.xlsx)
 
 # Data websites
 * [Data source list from UFL](http://www.stat.ufl.edu/~winner/datasets.html)

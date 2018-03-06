@@ -270,3 +270,62 @@ Not really - we've already been doing this
 An *indicator variable* uses two values to denote group membership (usually 0 and 1)
 
 How do we compare the slopes of two different groups when we have an indicator variable? How do we tell whether they are statistically significantly different?
+
+# New Variables (3.4)
+
+## Types of models
+
+* Interaction terms (done)
+* Polynomial regression
+
+## Using the Diamonds dataset
+
+* Predict total price from carats
+* Create a new variable - carats squared
+  * Now predict price from carats and carats squared
+  
+WAIT - WHY ARE WE MAKING A LINEAR MODEL AND GETTING A QUADRATIC???
+
+## Notes on making new variables
+
+* You can either define new variables (e.g. mutate()), or
+* You can use I() to just define a new variable inside a model, but then the new variable is lost
+
+Either:
+
+`Diamonds %>% lm(TotalPrice~Caret+Caret2)` or
+
+`Diamonds %>% lm(TotalPrice~Caret+I(Caret^2)`
+
+---
+
+```{r include=FALSE}
+Diamonds <- read_csv("http://stat2.org/datasets/Diamonds.csv")
+```
+
+```{r}
+Diamonds %>% ggplot(aes(x=Carat, y=TotalPrice))+geom_point()+
+  geom_smooth(method="lm", formula=y~x+I(x^2))
+```
+
+## A side note on factors (4.4, my take)
+
+* 4.4 recommends using separate indicator variables for each level of a categorical/factor variable.
+
+---
+
+```{r}
+Diamonds %>% ggplot(aes(x=Carat, y=TotalPrice))+geom_point(aes(color=Color))+
+  geom_smooth(method="lm", formula=y~x+I(x^2))
+```
+
+## What's the difference?
+
+```{r message=FALSE, warning=FALSE}
+Diamonds %>% ggplot(aes(x=Carat, y=TotalPrice, color=Color))+geom_point()+
+  geom_smooth(method="lm", formula=y~x+I(x^2))
+```
+
+## Getting the equations
+
+Create a regression predicting price from carat and color (not carat$^2$) yet, and plot it
