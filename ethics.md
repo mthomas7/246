@@ -1,6 +1,12 @@
 * [ASA Report](https://www.amstat.org/ASA/Your-Career/Ethical-Guidelines-for-Statistical-Practice.aspx)
 * [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815)
 * [Fung's Ethics Slides](http://andrewgelman.com/wp-content/uploads/2016/04/fung_ethics_v3.pdf)
+* [Randomized Responses](https://en.wikipedia.org/wiki/Randomized_response)
+
+## Graphics
+* [Misleading infographics](https://io9.gizmodo.com/11-most-useless-and-misleading-infographics-on-the-inte-1688239674)
+* [Business Insider Examples](http://www.businessinsider.com/the-27-worst-charts-of-all-time-2013-6)
+* [Quartz Misleading Charts](https://qz.com/580859/the-most-misleading-charts-of-2015-fixed/)
 
 ## Reproducible Research
 * [Forbes article](https://www.forbes.com/sites/quora/2017/02/09/how-the-reproducibility-crisis-in-academia-is-affecting-scientific-research/#4f0315423dad)
