@@ -15,6 +15,8 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 
 ## [Labs](./labs.html)
 
+## [Ethics](./ethics.html)
+
 <!--[notes](./github)-->
 
 <!--* R Packages (my notes):
