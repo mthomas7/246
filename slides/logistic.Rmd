@@ -1,0 +1,36 @@
+---
+title: "Logistic Regression"
+author: "Math 246"
+date: "March 22, 2018"
+output: ioslides_presentation
+---
+
+## Why do we need this?
+
+Load the hypothetical gre data from ucla dataset, and explore the data (summary).
+
+Say we want to predict whether someone is admitted to grad school... what could we do?
+
+Q: What percent of the students were admitted to grad school?
+
+## What kind of function (board work)
+
+## Doing logistic regression with the grad school dataset
+
+The `lm` command did linear regression, the `glm` command is the generalized linear model.
+
+Format:
+
+`model <- glm(y ~ x, data = mydata, family = "binomial")`
+
+Why binomial?
+
+## A Null model
+
+Get a summary of a logistic regression predicting admit with no predictors
+
+## New variable
+
+Make a new column called `prestige` which is 1 if the school has rank 1 or 2, and 0 if it has rank 3 or 4.
+
+Make a new logistic model predicting admit using `prestige`.
