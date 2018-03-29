@@ -3,6 +3,10 @@
 ## Assigned
 * [What I was Wrong About, NYT](https://www.nytimes.com/2017/12/24/opinion/2017-wrong-numbers.html)
 
+## Census
+* [Here’s Why an Accurate Census Count Is So Important](https://www.nytimes.com/2018/03/27/us/politics/census-citizenship-question.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news)
+* [If Census Asks About Citizenship, Some Already Have an Answer: No Comment](https://www.nytimes.com/2018/03/27/us/census-undocumented-immigrants.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news)
+
 ## For fun
 * [The hi-tech war on science fraud](https://www.theguardian.com/science/2017/feb/01/high-tech-war-on-science?utm_source=esp&utm_medium=Email&utm_campaign=GU+Today+USA+-+Collections+2017&utm_term=211294&subid=20238236&CMP=GT_US_collection)
 * [How statistics lost their power – and why we should fear what comes next](https://www.theguardian.com/politics/2017/jan/19/crisis-of-statistics-big-data-democracy)

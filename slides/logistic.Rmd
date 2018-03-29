@@ -9,6 +9,8 @@ output: ioslides_presentation
 
 Load the hypothetical gre data from ucla dataset, and explore the data (summary).
 
+(note: `xtabs` vs `count()`)
+
 Say we want to predict whether someone is admitted to grad school... what could we do?
 
 Q: What percent of the students were admitted to grad school?
@@ -27,7 +29,7 @@ Why binomial?
 
 ## A Null model
 
-Get a summary of a logistic regression predicting admit with no predictors
+Get a summary of a logistic regression predicting admit with no predictors (just use a 1 where )
 
 ## New variable
 
