@@ -24,10 +24,11 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
   * [ggplot2](./notes/ggplot.html)
   * [RMarkdown](./notes/rmarkdown.html)-->
 
-## [Package cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+## [Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
   * [dplyr, from rstudio](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
   * [rmarkdown, from rstudio](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
   * [ggplot2, from studio](https://github.com/rstudio/cheatsheets/raw/master/package-development.pdf)
+  * [github cheatsheet](http://git.io/sheet)
 
 
 ## [R FAQ](./faq.md)
