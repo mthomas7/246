@@ -30,7 +30,7 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
   * [ggplot2, from studio](https://github.com/rstudio/cheatsheets/raw/master/package-development.pdf)
 
 
-## [FAQ](./faq.md)
+## [R FAQ](./faq.md)
 
 ## [Datasets](./data/)
 
