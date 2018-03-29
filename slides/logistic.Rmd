@@ -31,8 +31,54 @@ Why binomial?
 
 Get a summary of a logistic regression predicting admit with no predictors (just use a 1 where )
 
+## More models
+
+Make a logistic model predicting admit from gre. Then make a second model predicting admit from gpa.
+
+Write down both equations in both the logit form and the probability form. 
+
+## The 50% mark
+
+How can we figure out when we hit the 50% mark?
+
 ## New variable
 
 Make a new column called `prestige` which is 1 if the school has rank 1 or 2, and 0 if it has rank 3 or 4.
 
 Make a new logistic model predicting admit using `prestige`.
+
+## Plotting {.smaller}
+
+```{r include=FALSE}
+require(readr)
+require(tidyverse)
+binary <- read_csv("https://stats.idre.ucla.edu/stat/data/binary.csv")
+```
+
+```{r}
+binary %>% 
+  ggplot(aes(x = gre, y = admit)) + 
+  geom_point() +
+  geom_smooth(method="glm", method.args = list(family = "binomial"), se=FALSE)
+```
+
+## Titanic data (titanic package)
+
+```{r}
+require(titanic)
+d <- titanic_train
+model1 <- d %>% glm(Survived~Age, data=.)
+
+d$predicted <- predict(model1, d)
+```
+
+---
+
+```{r message=FALSE, warning=FALSE}
+d %>% 
+  ggplot(aes(x=Age, y=Survived))+
+  geom_point(color="red")+
+  geom_smooth(method="glm", method.args = list(family = "binomial"), se=FALSE)+
+  geom_point(color="green", aes(x=Age, y=predicted))
+```
+
