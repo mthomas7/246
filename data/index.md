@@ -18,6 +18,7 @@
 * [A random collection of data sources and statistics stuff](http://statweb.calpoly.edu/bchance/stat_stuff.html)
 * [Robin Lock's Page of Datasets](http://it.stlawu.edu/~rlock/datasurf.html)
 * [FiveThirtyEight's Github Page](https://github.com/fivethirtyeight)
+* [3000 free data sources](https://www.forbes.com/sites/metabrown/2017/06/30/here-are-approximately-3000-free-sources-for-data-you-can-use-right-now/#52ad8fc3c759)
 
 ## Articles with Data
 * [Chi Square Analysis for Halloween: Is There a Slasher Movie Gender Gap?](http://blog.minitab.com/blog/understanding-statistics/chi-square-analysis-of-halloween-and-friday-the-13th-is-there-a-slasher-movie-gender-gap)
