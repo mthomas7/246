@@ -47,8 +47,6 @@ Make a new column called `prestige` which is 1 if the school has rank 1 or 2, an
 
 Make a new logistic model predicting admit using `prestige`.
 
-## Plotting {.smaller}
-
 ```{r include=FALSE}
 require(readr)
 require(tidyverse)
@@ -56,8 +54,73 @@ binary <- read_csv("https://stats.idre.ucla.edu/stat/data/binary.csv")
 ```
 
 ```{r}
+binary <- binary %>% mutate(prestige = as.numeric((rank==1) | (rank==2)))
+```
+
+
+## Odds Ratios
+
+```{r}
+binary %>% count(admit, prestige)
+```
+
+(same as)
+
+```{r, eval=FALSE}
+binary %>% group_by(admit, prestige) %>% summarize(n = n())
+```
+
+## Odds Ratios
+
+```{r}
+binary %>% count(admit, prestige)
+```
+
+What are the odds of being admitted if you're not in a prestigious school? What are the odds of being admitted if you are in a prestigious school?
+
+The *odds ratio* is the ratio of those two values. How do we interpret it?
+
+## Empirical logit
+
+$$\textrm{Empirical logit} = \textrm{logit}(\hat{p}) = \log\left(\frac{\hat{p}}{1-\hat{p}}\right) = \log \left( \frac{\# yes}{\# no} \right)$$
+
+## Logit as slope
+
+Suppose prestige is predicting log odds of being admitted (what kind of function?). What is the slope?
+
+## Slope is the log of the odds ratio.
+
+Therefore, the odds ratio is exp(fitted slope).
+
+## Coding this
+
+```{r}
+binmodel <- binary %>% glm(admit~prestige, family="binomial", data=.)
+binmodel$coefficients
+```
+
+```{r}
+exp(binmodel$coefficients)
+```
+
+## Same Data
+
+Rerun logistic regression - predict admit based on gpa. Exponentiate your slope - how do you interpret this value?
+
+## Plotting GRE {.smaller}
+
+```{r}
 binary %>% 
   ggplot(aes(x = gre, y = admit)) + 
+  geom_point() +
+  geom_smooth(method="glm", method.args = list(family = "binomial"), se=FALSE)
+```
+
+## Plotting GPA {.smaller}
+
+```{r}
+binary %>% 
+  ggplot(aes(x = gpa, y = admit)) + 
   geom_point() +
   geom_smooth(method="glm", method.args = list(family = "binomial"), se=FALSE)
 ```
@@ -67,9 +130,28 @@ binary %>%
 ```{r}
 require(titanic)
 d <- titanic_train
-model1 <- d %>% glm(Survived~Age, data=.)
+```
 
-d$predicted <- predict(model1, d)
+Predict survival probability from age.
+
+## Results
+
+```{r}
+model1 <- d %>% glm(Survived~Age, family="binomial", data=.)
+summary(model1)
+```
+
+## Predicted results
+
+```{r}
+predict(model1, d, type="response")
+d$predicted <- predict(model1, d, type="response")
+```
+
+## More predictions
+
+```{r}
+predict(model1, data.frame(Age=25), type="response")
 ```
 
 ---
@@ -92,3 +174,8 @@ d %>%
   geom_point(aes(x=Age, y=predicted))
 ```
 
+## Assessing Fit (9.3)
+
+* Linearity
+* Randomness
+* Independence
