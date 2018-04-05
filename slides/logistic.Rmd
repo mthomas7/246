@@ -134,7 +134,7 @@ d <- titanic_train
 
 Predict survival probability from age.
 
-## Results
+## Results {.smaller}
 
 ```{r}
 model1 <- d %>% glm(Survived~Age, family="binomial", data=.)
@@ -174,6 +174,33 @@ d %>%
   geom_point(aes(x=Age, y=predicted))
 ```
 
+## The augment function
+
+```{r}
+model1 <- d %>% glm(Survived~Age, family="binomial", data=.)
+```
+
+```{r}
+require(broom)
+model1 %>% augment(type.predict="response")
+```
+
+---
+
+```{r}
+newmodel1 <- 
+model1 %>% augment(type.predict = "response") %>% 
+  mutate(Survived_hat = round(.fitted))
+```
+
+---
+
+```{r}
+newmodel1 %>% 
+  select(Survived, Survived_hat) %>%
+  table()
+```
+
 ## Assessing Fit (9.3)
 
 * Linearity
@@ -189,3 +216,24 @@ d %>%
 * How should we check it?
 
 ## What do we do if we don't have linearity?
+
+## Multiple logistic regression
+
+How do we think this is going to work?
+
+## The Portugese banking dataset
+
+## Inference with logistic regression (9.4)
+
+What was inference like in the linear regression setting?
+
+## Tools we had
+
+* t-test
+* ANOVA (F-test)
+* SSModel vs SSE
+* $R^2$
+* $\hat{\sigma}_\epsilon$
+
+## New tools
+

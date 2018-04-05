@@ -7,6 +7,7 @@
 * [Diamonds](http://stat2.org/datasets/Diamonds.csv)
 * [Radio](MentalRadio.xlsx)
 * [Hypothetical GRE data from UCLA](https://stats.idre.ucla.edu/stat/data/binary.csv)
+* [Portugese Banking](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing#)
 
 # Data websites
 * [Data source list from UFL](http://www.stat.ufl.edu/~winner/datasets.html)
