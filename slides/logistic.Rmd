@@ -2,7 +2,9 @@
 title: "Logistic Regression"
 author: "Math 246"
 date: "March 22, 2018"
-output: ioslides_presentation
+output: 
+  ioslides_presentation: 
+    widescreen: yes
 ---
 
 ## Why do we need this?
@@ -223,13 +225,40 @@ How do we think this is going to work?
 
 ## The Portugese banking dataset
 
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+bank_full <- read_delim("../data/bankfull.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+bank_full$y <- as.numeric(as.factor(bank_full$y))-1
+```
+
+## GLM {.smaller}
+
+```{r}
+bank_full %>% glm(y~age, family="binomial", data=.) %>% summary()
+```
+
+## GLM2 {.smaller}
+
+```{r}
+bank_full %>% glm(y~balance, family="binomial", data=.) %>% summary()
+```
+
+## GLM3 {.smaller}
+
+```{r}
+bank_full %>% glm(y~age+balance, family="binomial", data=.) %>% summary()
+```
+
+## Interpreting the multivariate logistic regression
+
+How do we interpret the coefficients?
+
 ## Inference with logistic regression (9.4)
 
 What was inference like in the linear regression setting?
 
 ## Tools we had
 
-* t-test
+* t-test (confidence intervals)
 * ANOVA (F-test)
 * SSModel vs SSE
 * $R^2$
@@ -237,3 +266,51 @@ What was inference like in the linear regression setting?
 
 ## New tools
 
+* Confidence interals (and p-value, z-test, Wald statistic)
+  * What is the null hypothesis?
+* Minimize Deviance ($=-2*\ln(L)$), this is like the F-test (ANOVA)
+  * Test is based on the change in deviance between null and tested model
+  * Change is approximately a $\Chi^2$-distribution, with df the number of parameters
+    * Called a likelihood ratio test (let's do this by hand)
+
+## LR Test
+
+Testing the null hypothesis that the slope is 0.
+
+$G = -2 \ln(L_0) - (-2 \ln(L))$
+
+Why are we calling this a ratio?
+
+## To do the LR test
+```{r message=FALSE, warning=FALSE}
+require(lmtest)
+mod1 <- bank_full %>% glm(y~1, family="binomial", data=.)
+mod2 <- bank_full %>% glm(y~age, family="binomial", data=.)
+lrtest(mod1,mod2)
+```
+
+## LRTest
+
+```{r}
+require(lmtest)
+mod1 <- bank_full %>% glm(y~1, family="binomial", data=.)
+mod2 <- bank_full %>% glm(y~age, family="binomial", data=.)
+mod3 <- bank_full %>% glm(y~age+balance, family="binomial", data=.)
+lrtest(mod2,mod3)
+```
+
+## More LRTest
+
+```{r}
+require(lmtest)
+mod1 <- bank_full %>% glm(y~1, family="binomial", data=.)
+mod2 <- bank_full %>% glm(y~age, family="binomial", data=.)
+mod3 <- bank_full %>% glm(y~age+balance, family="binomial", data=.)
+lrtest(mod1,mod3)
+```
+
+## Wald vs LRTest
+
+* These won't always agree
+* LR test is the better measure when they don't agree
+  * LR test needs to test nested models (otherwise, you can use the AIC)
