@@ -314,3 +314,44 @@ lrtest(mod1,mod3)
 * These won't always agree
 * LR test is the better measure when they don't agree
   * LR test needs to test nested models (otherwise, you can use the AIC)
+  
+## Question
+
+Would adding an interaction term to the model predicting $y$ using age and balance significantly improve the model? Use both the Wald statistic (z) and a likelihood ratio test to determine the answer.
+
+## The Full Dataset
+
+Consider the entire dataset. What is the best model for predicting $y$?
+
+Note:
+```{r eval=FALSE}
+summary(glm(y~., data=bank_full, family="binomial"))
+```
+
+## Another aside
+
+```{r, eval=FALSE}
+step(glm(y~., data=bank_full, family="binomial"))
+```
+
+
+
+
+
+## Likelihood Functions (11.1)
+
+* Probabilities: $P(A|B)$
+* Logistic probabilities: $P(X=1 | \beta_0, \beta_1, ...)$ or $P(data \ | \ parameters)$
+* Likelihood: $P(parameters \ | \ data)$
+
+## Example
+
+Imagine you have a spinner. Pick the probability. What are the chances of getting Y? N?
+
+What are the chances of getting NN? YN? NY? YY? YNY?
+
+How do we draw this?
+
+## How do we make sense of this is more dimensions?
+
+## Relating this back to facebook...
