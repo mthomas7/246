@@ -2,7 +2,9 @@
 title: "ANOVA"
 author: "Math 246"
 date: "April 16, 2018"
-output: ioslides_presentation
+output: 
+  ioslides_presentation: 
+    widescreen: yes
 ---
 
 ## ANOVA
@@ -23,10 +25,21 @@ library(tidyverse)
 fb %>% group_by(Type) %>% summarize(mean=mean(`Page total likes`))
 ```
 
-## ANOVA
+## Thinking regression
 
+Do a simple linear regression predicting likes from type of post. Get a summary and an anova table.
 
+## Results {.smaller}
 
+```{r}
+modlinear <- fb %>% lm(`Page total likes`~Type, data=.)
+summary(modlinear)
+```
+## ANOVA table
+
+```{r}
+anova(modlinear)
+```
 
 
 ## Model
@@ -36,3 +49,118 @@ mod1 <- fb %>% aov(`Page total likes`~Type, data=.)
 summary(mod1)
 ```
 
+## Meaning of ANOVA
+
+```{r}
+fb %>% ggplot(aes(x=Type, y = `Page total likes`))+geom_boxplot()
+```
+
+## Better yet
+
+```{r}
+fb %>% ggplot(aes(x=`Page total likes`))+geom_histogram()+facet_wrap(~Type, scales="free_y")
+```
+
+
+## Setup
+
+Observation = Group mean + Error
+
+Group mean = Grant mean + Group effect
+
+Response = Grand mean + Group effect + Error term
+$$Y = \mu + a_k + \epsilon$$
+
+but
+
+$$\mu_k = \mu + \alpha_k$$
+
+## Plotted
+
+```{r}
+fb %>% ggplot(aes(x = Type, y = `Page total likes`))+geom_point()
+```
+
+## Back to the table: df
+
+```{r}
+mod1 <- fb %>% aov(`Page total likes`~Type, data=.)
+summary(mod1)
+```
+
+## Hypothesis Test
+
+$H_0: \alpha_1 = \alpha_2 = ... = \alpha_K = 0$
+
+$H_A:$ at least one $\alpha_k \neq 0$
+
+## What do these mean?
+
+$\hat{\mu} = \bar{y}$
+
+When is it true that $\hat{y} = \bar{y}$?
+
+$\hat{\alpha}_k = \bar{y}_k - \hat{\mu} = \bar{y}_k - \bar{y}$
+
+$\hat{\epsilon} = y - \hat{y} = y - \hat{\mu} - \hat{\alpha}_k = y - \bar{y}_k$
+
+## So...
+
+Estimated values:
+
+$\hat{\mu} = \bar{y}$
+
+$\hat{\alpha}_k = \bar{y}_k - \bar{y}$
+
+$\hat{\epsilon} = y - \bar{y}_k$
+
+## Assumptions
+
+* Residuals have mean 0
+* These normal populations have a common variance
+  * Can use Levene’s test to check this
+* Residuals are normally distributed (at each level)
+  * (Kolmogorov–Smirnov test)
+  * (Shapiro–Wilk test)
+* Residuals are independent
+
+## Resduals have mean 0
+
+```{r}
+mean(mod1$residuals)
+```
+
+```{r}
+fb$residuals <- mod1$residuals
+fb %>% group_by(Type) %>% summarise(mean=mean(residuals))
+```
+
+## Common variance
+
+```{r}
+fb %>% group_by(Type) %>% summarise(var = var(residuals))
+```
+```{r}
+460521615/22378119
+```
+(2 would be better...)
+
+## Normal residuals
+
+```{r}
+qplot(mod1$residuals)
+```
+
+## By type
+
+```{r}
+fb %>% ggplot(aes(x = residuals))+geom_histogram() + facet_wrap(~Type)
+```
+
+## Residuals vs fitted - same spread?
+
+```{r}
+qplot(mod1$fitted.values,mod1$residuals)
+```
+
+## How could we fix these broken assumptions?
