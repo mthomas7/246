@@ -7,3 +7,4 @@
 * [Multiple Regression](./multiple.html)
 * [Logistic Regression](./logistic.html)
   * [Interpreting odds ratios](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-how-do-i-interpret-odds-ratios-in-logistic-regression/)
+* [ANOVA](./anova.html)

@@ -1,0 +1,38 @@
+---
+title: "ANOVA"
+author: "Math 246"
+date: "April 16, 2018"
+output: ioslides_presentation
+---
+
+## ANOVA
+
+Consider the facebook dataset. Does the avergae number of likes depend on what type of post you make?
+
+Figure out the average number of likes for each of the types. What is the average number of likes for all posts? Distribution of the number of likes for each type? For all types?
+
+## Example
+
+```{r include=FALSE}
+library(readr)
+fb <- read_delim("../data/fb.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+library(tidyverse)
+```
+
+```{r}
+fb %>% group_by(Type) %>% summarize(mean=mean(`Page total likes`))
+```
+
+## ANOVA
+
+
+
+
+
+## Model
+
+```{r}
+mod1 <- fb %>% aov(`Page total likes`~Type, data=.)
+summary(mod1)
+```
+
