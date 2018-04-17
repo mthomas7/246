@@ -57,7 +57,7 @@ fb %>% ggplot(aes(x=Type, y = `Page total likes`))+geom_boxplot()
 
 ## Better yet
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 fb %>% ggplot(aes(x=`Page total likes`))+geom_histogram()+facet_wrap(~Type, scales="free_y")
 ```
 
@@ -147,13 +147,13 @@ fb %>% group_by(Type) %>% summarise(var = var(residuals))
 
 ## Normal residuals
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 qplot(mod1$residuals)
 ```
 
 ## By type
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 fb %>% ggplot(aes(x = residuals))+geom_histogram() + facet_wrap(~Type)
 ```
 
