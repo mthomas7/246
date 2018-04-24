@@ -102,6 +102,13 @@ AnimalData %>% ggplot(aes(x=Type, y=DaysInShelter, color=Type)) +
   geom_boxplot() + geom_point()
 ```
 
+## More plots
+
+```{r}
+AnimalData %>% ggplot(aes(x=Type, y=DaysInShelter, color=Sex)) + 
+  geom_boxplot() + geom_point()
+```
+
 ## A significiant difference?
 
 Is there a statistically significant difference in the length of time before adoption between cats and dogs?
