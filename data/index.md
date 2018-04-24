@@ -9,6 +9,14 @@
 * [Hypothetical GRE data from UCLA](https://stats.idre.ucla.edu/stat/data/binary.csv)
 * [Portugese Banking](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing#)
 * [Facebook](https://archive.ics.uci.edu/ml/datasets/Facebook+metrics)
+* Toothpaste
+  * [1](./toothpaste1.csv)
+  * [1b](./toothpaste1b.csv)
+  * [2](./toothpaste2.csv)
+  * [3](./toothpaste3.csv)
+* [Animal Data](./AnimalData.csv)
+* [Cars](./cars.csv)
+
 
 # Data websites
 * [Data source list from UFL](http://www.stat.ufl.edu/~winner/datasets.html)

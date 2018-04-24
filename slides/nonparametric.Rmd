@@ -1,0 +1,119 @@
+---
+title: "Non-parametrics"
+author: "Math 246"
+date: "April 24, 2018"
+output: 
+  ioslides_presentation: 
+    widescreen: yes
+---
+
+## Reminders
+
+* What does a t-test do?
+* What kinds of t-tests are there?
+* What are the assumptions?
+
+## T-test Assumptions
+
+* Variable is continuous
+* Random/Independent
+* Data is normally distributed
+* Sample size?
+* Equal variance
+
+## Relaxing the assumptions
+
+* Continuous (not necessarily normal) distribution
+  * Can actually use ordinal data
+* Random/Independent
+
+## The tests
+
+| parametric                        | non-parametric                         |
+|-----------------------------------|----------------------------------------|
+| 1 sample t                        | sign test or Wilcoxon signed-rank test |
+| 2 sample t (not paired)           | **Wilcoxon-Mann-Whitney**              |
+| 2 sample paired t (matched pairs) | reduce to 1 sample                     |
+
+## Wilcoxon-Mann-Whitney
+
+* Toothpaste data set
+* Why not use a t-test?
+
+## Running the test by hand
+
+$W_1 = n_1 n_2 + \dfrac{n_1(n_1+1)}{2}-R_1$
+
+$W_2 = n_1 n_2 + \dfrac{n_2(n_2+1)}{2}-R_2$
+
+## Toothpaste 1b
+
+Try with the second dataset
+
+## Toothpaste 2
+
+## Making your own dataset
+
+Create a small dataset which has a lot of overlap, compute $W_1$ and $W_2$.
+
+Now do the same with a small dataset with no overlap.
+
+What conclusions can you make about possible values of $W_1$ and $W_2$?
+
+## More calculating
+
+What is $W_1+W_2$ in general? Find a formula.
+
+## Coding this
+
+```{r include=FALSE}
+require(ggplot2)
+require(dplyr)
+require(readr)
+toothpaste1 <- read_csv("../data/toothpaste1.csv")
+toothpaste1b <- read_csv("../data/toothpaste1b.csv")
+toothpaste2 <- read_csv("../data/toothpaste2.csv")
+toothpaste3 <- read_csv("../data/toothpaste3.csv")
+```
+```{r}
+toothpaste2 %>% wilcox.test(score~brand, data=.)
+```
+
+Try 1b and 2
+
+## A Question
+
+Why did I say this would more more related to medians than means?
+
+## Animal data
+
+Download the animal data dataset. This includes information on animals and the length of time they're in a shelter before being adopted. What kinds of questions could we answer?
+
+Consider some descriptive statistics / graphs.
+
+## Animals
+
+```{r include=FALSE}
+AnimalData <- read_csv("../data/AnimalData.csv")
+```
+
+```{r}
+AnimalData %>% ggplot(aes(x=Type, y=DaysInShelter, color=Type)) + 
+  geom_boxplot() + geom_point()
+```
+
+## A significiant difference?
+
+Is there a statistically significant difference in the length of time before adoption between cats and dogs?
+
+## Cars
+
+* The cars dataset has data cars from 1974.
+* am is coded:
+  * 0 = automatic
+  * 1 = manual
+* Is there a difference in mpg between automatic and manual transmission cars in 1974?
+
+## Relationship to t-test
+
+Consider the animal and cars analysis. Run each using a t-test. Would the t-test have been a reasonable alternative?
