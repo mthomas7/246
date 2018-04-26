@@ -158,7 +158,7 @@ Where:
 
 ## What does this give us?
 
-$H$ is distributed as a chi square distribution with $n-1$ degrees of freedom
+$H$ is distributed approximately as a chi square distribution with $n-1$ degrees of freedom
 
 (Each of the $n_i$ should be at least 5 for the approximation to be valid.)
 
