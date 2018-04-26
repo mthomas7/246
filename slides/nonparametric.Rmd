@@ -115,16 +115,6 @@ Is there a statistically significant difference in the length of time before ado
 
 Between male animals and female animals?
 
-<!--
-## Cars
-
-* The cars dataset has data cars from 1974.
-* am is coded:
-  * 0 = automatic
-  * 1 = manual
-* Is there a difference in mpg between automatic and manual transmission cars in 1974?
--->
-
 ## Relationship to t-test
 
 Would the t-test have been a reasonable alternative for the animaldata analysis?
