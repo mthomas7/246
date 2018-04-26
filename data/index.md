@@ -16,7 +16,8 @@
   * [3](./toothpaste3.csv)
   * [4](./toothpaste4.csv)
 * [Animal Data](./AnimalData.csv)
-* [Iris](https://archive.ics.uci.edu/ml/datasets/Iris)
+* [Iris](./iris.csv)
+  * [Source](https://archive.ics.uci.edu/ml/datasets/Iris)
 * [Cars](./cars.csv)
 
 
