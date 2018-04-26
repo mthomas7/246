@@ -113,6 +113,9 @@ AnimalData %>% ggplot(aes(x=Type, y=DaysInShelter, color=Sex)) +
 
 Is there a statistically significant difference in the length of time before adoption between cats and dogs?
 
+Between male animals and female animals?
+
+<!--
 ## Cars
 
 * The cars dataset has data cars from 1974.
@@ -120,7 +123,78 @@ Is there a statistically significant difference in the length of time before ado
   * 0 = automatic
   * 1 = manual
 * Is there a difference in mpg between automatic and manual transmission cars in 1974?
+-->
 
 ## Relationship to t-test
 
-Consider the animal and cars analysis. Run each using a t-test. Would the t-test have been a reasonable alternative?
+Would the t-test have been a reasonable alternative for the animaldata analysis?
+
+## Null hypothesis
+
+What is the null hypothesis for the Wilcoxon-Mann Whitney test?
+
+> * The distribution of group A and group B are the same.
+> * This is usually interpreted to mean wr assume the same shape distribution, and the medians are the same.
+
+# Kruskal–Wallis
+
+## Non-parametric version of an ANOVA
+
+What did an ANOVA do?
+
+## ANOVA assumptions
+
+* Errors have mean 0
+* Equal variance
+* Normally distributed
+* Independent
+
+## Kruskal–Wallis assumptions
+
+* Independence
+* Response variable should be at least ordinal
+* Samples come from same type of distribution
+
+## Formula
+
+$$H = (N-1)\dfrac{\sum_{i=1}^g n_i (\bar{r}_i-\bar{r})^2}{\sum_{i=1}^g \sum_{j=1}^{n_i} (r_{ij}-\bar{r})^2}$$
+Where:
+
+* $n_i$ is the number of observations in group $i$
+* $r_{ij}$ is the rank of observation $j$ in group $i$
+* $N$ is the total number of observations
+* $\bar{r}_i$ is the average rank of observations in group $i$
+* $\bar{r}$ is the average of all the $r_{ij}$
+
+## What does this give us?
+
+$H$ is distributed as a chi square distribution with $n-1$ degrees of freedom
+
+(Each of the $n_i$ should be at least 5 for the approximation to be valid.)
+
+## Some more algebra
+
+What is a formula for $\bar{r}$?
+
+## An Example
+
+Toothpaste 
+
+```{r include=FALSE}
+toothpaste4 <- read_csv("../data/toothpaste4.csv")
+```
+
+```{r}
+toothpaste4$brand <- as.factor(toothpaste4$brand)
+toothpaste4$score <- as.numeric(toothpaste4$score)
+toothpaste4 %>% kruskal.test(score~brand, data=.)
+```
+ * df is the number of groups-1
+
+
+## Let's return to the cdc dataset
+
+* What questions could we answer with a Wilcoxon-Mann-Whitney test?
+* What questions could we answer with a Kruskal-Wallace test?
+
+## Iris dataset

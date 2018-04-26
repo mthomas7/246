@@ -2,6 +2,7 @@
 
 ## Assigned
 * [What I was Wrong About, NYT](https://www.nytimes.com/2017/12/24/opinion/2017-wrong-numbers.html)
+* [What is Bayesian...](http://people.math.umass.edu/~lavine/whatisbayes.pdf)
 
 ## Census
 * [Here’s Why an Accurate Census Count Is So Important](https://www.nytimes.com/2018/03/27/us/politics/census-citizenship-question.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news)

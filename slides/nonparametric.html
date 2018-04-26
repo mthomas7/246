@@ -3236,22 +3236,102 @@ if (document.readyState !== "loading" &&
 
 <p>Is there a statistically significant difference in the length of time before adoption between cats and dogs?</p>
 
-</article></slide><slide class=""><hgroup><h2>Cars</h2></hgroup><article  id="cars">
+<p>Between male animals and female animals?</p>
 
-<ul>
-<li>The cars dataset has data cars from 1974.</li>
-<li>am is coded:
+<!--
+## Cars
 
-<ul>
-<li>0 = automatic</li>
-<li>1 = manual</li>
-</ul></li>
-<li>Is there a difference in mpg between automatic and manual transmission cars in 1974?</li>
-</ul>
+* The cars dataset has data cars from 1974.
+* am is coded:
+  * 0 = automatic
+  * 1 = manual
+* Is there a difference in mpg between automatic and manual transmission cars in 1974?
+-->
 
 </article></slide><slide class=""><hgroup><h2>Relationship to t-test</h2></hgroup><article  id="relationship-to-t-test">
 
-<p>Consider the animal and cars analysis. Run each using a t-test. Would the t-test have been a reasonable alternative?</p></article></slide>
+<p>Would the t-test have been a reasonable alternative for the animaldata analysis?</p>
+
+</article></slide><slide class=""><hgroup><h2>Null hypothesis</h2></hgroup><article  id="null-hypothesis">
+
+<p>What is the null hypothesis for the Wilcoxon-Mann Whitney test?</p>
+
+<ul class = 'build'>
+<li>The distribution of group A and group B are the same.</li>
+<li>This is usually interpreted to mean wr assume the same shape distribution, and the medians are the same.</li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Kruskal–Wallis</h2></hgroup><article  id="kruskalwallis">
+
+</article></slide><slide class=""><hgroup><h2>Non-parametric version of an ANOVA</h2></hgroup><article  id="non-parametric-version-of-an-anova">
+
+<p>What did an ANOVA do?</p>
+
+</article></slide><slide class=""><hgroup><h2>ANOVA assumptions</h2></hgroup><article  id="anova-assumptions">
+
+<ul>
+<li>Errors have mean 0</li>
+<li>Equal variance</li>
+<li>Normally distributed</li>
+<li>Independent</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Kruskal–Wallis assumptions</h2></hgroup><article  id="kruskalwallis-assumptions">
+
+<ul>
+<li>Independence</li>
+<li>Response variable should be at least ordinal</li>
+<li>Samples come from same type of distribution</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Formula</h2></hgroup><article  id="formula">
+
+<p>\[H = (N-1)\dfrac{\sum_{i=1}^g n_i (\bar{r}_i-\bar{r})^2}{\sum_{i=1}^g \sum_{j=1}^{n_i} (r_{ij}-\bar{r})^2}\] Where:</p>
+
+<ul>
+<li>\(n_i\) is the number of observations in group \(i\)</li>
+<li>\(r_{ij}\) is the rank of observation \(j\) in group \(i\)</li>
+<li>\(N\) is the total number of observations</li>
+<li>\(\bar{r}_i\) is the average rank of observations in group \(i\)</li>
+<li>\(\bar{r}\) is the average of all the \(r_{ij}\)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>What does this give us?</h2></hgroup><article  id="what-does-this-give-us">
+
+<p>\(H\) is distributed as a chi square distribution with \(n-1\) degrees of freedom</p>
+
+<p>(Each of the \(n_i\) should be at least 5 for the approximation to be valid.)</p>
+
+</article></slide><slide class=""><hgroup><h2>Some more algebra</h2></hgroup><article  id="some-more-algebra">
+
+<p>What is a formula for \(\bar{r}\)?</p>
+
+</article></slide><slide class=""><hgroup><h2>An Example</h2></hgroup><article  id="an-example">
+
+<p>Toothpaste</p>
+
+<pre class = 'prettyprint lang-r'>toothpaste4$brand &lt;- as.factor(toothpaste4$brand)
+toothpaste4$score &lt;- as.numeric(toothpaste4$score)
+toothpaste4 %&gt;% kruskal.test(score~brand, data=.)</pre>
+
+<pre >## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  score by brand
+## Kruskal-Wallis chi-squared = 5.3571, df = 2, p-value = 0.06866</pre>
+
+<ul>
+<li>df is the number of groups-1</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Let’s return to the cdc dataset</h2></hgroup><article  id="lets-return-to-the-cdc-dataset">
+
+<ul>
+<li>What questions could we answer with a Wilcoxon-Mann-Whitney test?</li>
+<li>What questions could we answer with a Kruskal-Wallace test?</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Iris dataset</h2></hgroup><article  id="iris-dataset"></article></slide>
 
 
   <slide class="backdrop"></slide>
