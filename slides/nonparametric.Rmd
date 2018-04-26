@@ -124,7 +124,7 @@ Would the t-test have been a reasonable alternative for the animaldata analysis?
 What is the null hypothesis for the Wilcoxon-Mann Whitney test?
 
 > * The distribution of group A and group B are the same.
-> * This is usually interpreted to mean wr assume the same shape distribution, and the medians are the same.
+> * This is usually interpreted to mean we assume the same shape distribution, and the medians are the same.
 
 # Kruskal–Wallis
 
@@ -168,7 +168,9 @@ What is a formula for $\bar{r}$?
 
 ## An Example
 
-Toothpaste 
+More toothpaste!
+
+## Running the test
 
 ```{r include=FALSE}
 toothpaste4 <- read_csv("../data/toothpaste4.csv")
