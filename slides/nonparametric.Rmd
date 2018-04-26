@@ -189,4 +189,6 @@ toothpaste4 %>% kruskal.test(score~brand, data=.)
 * What questions could we answer with a Wilcoxon-Mann-Whitney test?
 * What questions could we answer with a Kruskal-Wallace test?
 
+Note: try to determine whether there is a difference in ages between genders.
+
 ## Iris dataset
