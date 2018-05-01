@@ -14,3 +14,4 @@ Welcome to the website for Math 246 at IC. All the information, data sets, and a
 - [Ethics](./ethics.md)
 - [Articles](./articles.md)
 - [Links](./links.md)
+- [Final Exam Review Questions](./final.md)
