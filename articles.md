@@ -3,6 +3,10 @@
 ## Assigned
 * [What I was Wrong About, NYT](https://www.nytimes.com/2017/12/24/opinion/2017-wrong-numbers.html)
 * [What is Bayesian...](http://people.math.umass.edu/~lavine/whatisbayes.pdf)
+* Final exam articles
+  * [NYT](https://www.nytimes.com/2018/04/19/opinion/standing-up-at-your-desk-could-make-you-smarter.html)
+  * [Study](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0195549)
+
 
 ## Census
 * [Here’s Why an Accurate Census Count Is So Important](https://www.nytimes.com/2018/03/27/us/politics/census-citizenship-question.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news)
