@@ -21,8 +21,6 @@
 * [Cars](./cars.csv)
 * [Final exam](./final.csv)
 
-TEST
-
 # Data websites
 * [Data source list from UFL](http://www.stat.ufl.edu/~winner/datasets.html)
 * [Package of data sets](https://simplystatistics.org/2018/01/22/the-dslabs-package-provides-datasets-for-teaching-data-science/)
